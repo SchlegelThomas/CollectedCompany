@@ -1,0 +1,7 @@
+﻿<div class="row" ng-controller="relatedProductController as Controller">
+    <h1>Related Products</h1>
+    <div class="col-lg-3 related-product-container" ng-repeat="product in Controller._relatedProducts track by product.Id" ui-sref="Product({id:product.Id})">
+        <h3>{{product.Title}}</h3>
+        <img class="related-product" ng-src="{{product.ImageUrl}}" />
+    </div>
+</div>

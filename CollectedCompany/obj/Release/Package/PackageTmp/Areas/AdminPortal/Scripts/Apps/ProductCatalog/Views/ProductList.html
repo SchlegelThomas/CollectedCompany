@@ -1,0 +1,61 @@
+﻿<div class="row" ng-controller="productListController as listController">
+    <div class="col-lg-12">
+        <button class="btn btn-primary manage" ng-click="listController.toggleClassicSearch()"><span class="fa fa-cogs"></span></button>
+        <h1 class="align-center">Products</h1>
+        <div class="col-lg-12" ng-if="listController.classicSearch">
+            <div class="col-lg-8 center-div">
+                <input type="text" placeholder="Search..." ng-model="listController.search.$" class="form-control hipster-search" />
+            </div>
+            <div class="col-lg-12">
+                <div class="col-lg-4">
+                    <h3 class="align-center search-title">Search By <span>Category</span></h3>
+                    <input type="text" placeholder="Search..." ng-model="listController.categorySearch.$" class="form-control hipster-search" />
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="align-center search-title">Search By <span>Sub Category</span></h3>
+                    <input type="text" placeholder="Search..." ng-model="listController.subCategorySearch.$" class="form-control hipster-search" />
+                </div>
+                <div class="col-lg-4">
+                    <h3 class="align-center search-title">Search By <span>Tag</span></h3>
+                    <input type="text" placeholder="Search..." ng-model="listController.tagSearch.$" class="form-control hipster-search" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 center-div" ng-if="!listController.classicSearch">
+            <div class="col-lg-12 natural-language-form">
+                I'm searching for
+                <div class="field">
+                    <input type="text" placeholder="any product" ng-model="listController.search.$" class="natural-input" />
+                </div>
+                in
+                <div class="field">
+                    <input type="text" placeholder="category" ng-model="listController.categorySearch.$" class="natural-input" />
+                </div>
+                <br />
+                or
+                <div class="field">
+                    <input type="text" placeholder="sub category" ng-model="listController.subCategorySearch.$" class="natural-input" />
+                </div>
+                maybe with keyword
+                <div class="field">
+                    <input type="text" placeholder="tag" ng-model="listController.tagSearch.$" class="natural-input" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 search-results">
+            <div ng-repeat="product in listController._products
+            | filter:listController.search | filter:listController.categorySearch | filter: listController.SubCategorySearch
+            | filter: listController.tagSearch track by product.Id"
+                 class="col-lg-3 search-card clearfix animate-repeat" ui-sref="Product({id:product.Id})">
+                <div class="col-lg-12">
+                    <h3>
+                        {{product.Title}}
+                    </h3>
+                    <div class="col-lg-12">
+                        <img class="product-image" ng-src="{{product.ImageUrl}}" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

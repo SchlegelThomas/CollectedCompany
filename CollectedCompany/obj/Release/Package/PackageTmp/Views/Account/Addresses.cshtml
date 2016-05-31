@@ -1,0 +1,87 @@
+﻿
+
+@{
+    ViewBag.Title = "Addresses";
+}
+<section class="breadcrumb-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>My Account</h2>
+                <p>Account Dashboard</p>
+            </div>
+            <div class="col-xs-6">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="my-account.html">My Account</a></li>
+                    <li class="active">Account Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content account">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <aside class="sidebar">
+
+                    <!-- WIDGET:CATEGORIES - START -->
+                    <div class="widget widget-navigation">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li>@Html.ActionLink("My Account", "Dashboard", "Account")</li>
+                            <li>@Html.ActionLink("Personal Information", "Profile", "Account")</li>
+                            <li class="active">@Html.ActionLink("My Addresses", "Addresses", "Account")</li>
+                            <li>@Html.ActionLink("My Orders", "Orders", "Account")</li>
+                            <li>@Html.ActionLink("Wislist", "Wishlist", "Account")</li>
+                            <li>@Html.ActionLink("My Team", "Teams", "Account")</li>
+                            <li>@Html.ActionLink("My Contests", "Contests", "Account")</li>
+                        </ul>
+                    </div>
+                    <!-- WIDGET:CATEGORIES - END -->
+
+                </aside>
+            </div>
+            <div class="col-sm-9">
+                <article class="account-content">
+                    <h3>My Addresses</h3>
+                    <div class="table-responsive border">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Company</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Country</th>
+                                <th>Phone</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <td>Apple Inc.</td>
+                                <td>John Doe</td>
+                                <td>16, Main street 2nd floor 75002 Paris</td>
+                                <td>France</td>
+                                <td>+420 123 456 789</td>
+                                <td><a class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a><a class="btn btn-primary btn-sm"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Microsoft Corporation</td>
+                                <td>John Doe</td>
+                                <td>16, Main street 2nd floor 33133 Miami</td>
+                                <td>United States</td>
+                                <td>+420 123 456 789</td>
+                                <td><a class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a><a class="btn btn-primary btn-sm"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <a href="add-address.html" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Add New Address</a>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

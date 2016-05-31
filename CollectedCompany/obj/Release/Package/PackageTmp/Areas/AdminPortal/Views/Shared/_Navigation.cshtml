@@ -1,0 +1,111 @@
+﻿@using MvcSiteMapProvider.Web.Html
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href=""></a>
+    </div>
+    <div class="col-lg-12" id="BreadCrumb">
+        @*@Html.MvcSiteMap().Menu(true, false, false)*@
+    </div>
+    <div class="navbar-inverse sidebar" role="navigation" id="LeftNav">
+        <div class="sidebar-nav">
+            <ul class="nav" id="side-menu">
+                <li>
+                    @Html.ActionLink("Master Catalog", "Dashboard", "ProductCatalog", new { }, new { @class = "nav-link" })
+                </li>
+                <li>
+                    @Html.ActionLink("Dashboard", "Dashboard", "Admin", new {}, new {@class = "nav-link"})
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-fw fa-database"></i> Products <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            @Html.ActionLink("Dashboard", "Dashboard", "Product", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Transfers", "Transfers", "Admin", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Inventory", "Inventory", "Admin", new {}, new {@class = "nav-link"})
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    @Html.ActionLink("Customers", "Customers", "Admin", new {}, new {@class = "nav-link"})
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-fw fa-money"></i>Integrations<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            @Html.ActionLink("Dashboard", "Dashboard", "Integrations", new { }, new { @class = "nav-link" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Amazon Api", "Amazon", "Integrations", new { }, new { @class = "nav-link" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("Google Merchant Accounts", "GoogleMerchants", "Integrations", new { }, new { @class = "nav-link" })
+                        </li>
+                        <li>
+                            @Html.ActionLink("TCG Player", "TCGPlayer", "Integrations", new { }, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    @Html.ActionLink("Reports", "Reports", "Admin", new {}, new {@class = "nav-link"})
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-fw fa-wrench"></i>Settings <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            @Html.ActionLink("General", "General", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Payments", "Payments", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Checkout", "Checkout", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Shipping", "Shipping", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Taxes", "Taxes", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Notifications", "Notifications", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Files", "Files", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Account", "Account", "AdminSettings", new {}, new {@class = "nav-link"})
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="StoreFront">
+            <button class="store-btn">
+                <span class="storefront-initials">MCG</span>
+                <span class="storefront-name">
+                    Music City Games
+                    <span class="storefront-user">Thomas Schlegel</span>
+                </span>
+                <span class="fa fa-caret-up"></span>
+            </button>
+        </div>
+    </div>
+
+</nav>

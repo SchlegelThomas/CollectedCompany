@@ -1,0 +1,37 @@
+﻿<div class="row" ng-controller="productController as Controller">
+    <div class="col-lg-6">
+        <div class="col-lg-12">
+            <h1>{{Controller._model.Title}} <span class="product-type">{{Controller._model.ProductInformation.Vendor.ProductType}}</span></h1>
+            <h3>Sold By <a class="vendor">{{Controller._model.ProductInformation.Vendor.Name}}</a></h3>
+        </div>
+        <div class="col-lg-12">
+            <a class="category" ng-repeat="category in Controller._model.ProductInformation.ProductCategories track by category.Id">
+                {{category.Description}}
+            </a>
+        </div>
+        <div class="col-lg-12">
+            <img class="product-image" ng-src="{{Controller._model.ImageUrl}}"/>
+        </div>
+        <div class="col-lg-12" style="padding-top: 10px;">
+            <a class="tag" ng-repeat="tag in Controller._model.ProductInformation.ProductTags track by tag.Id">
+                {{tag.Description}}
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="col-lg-12">
+            <div class="col-lg-12" style="padding-top: 5px;">
+                <label>Product Description</label>
+                <p>{{Controller._model.Description}}</p>
+            </div>
+            <div class="col-lg-12">
+                <h3>Suggested Retail Price: <span class="price">${{Controller._model.CompareAtPrice}}</span></h3>
+                <h5>Weight by Unit: <span class="weight">{{Controller._model.ShippingInformation.Weight}}</span></h5>
+            </div>
+            <div class="col-lg-6" ng-repeat="image in Controller._model.Images track by image.Id">
+                <img class="image-gallery" ng-src="{{image.ImageUrl}}"/>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success add-to-catalog">Add to my catalog</button>
+</div>

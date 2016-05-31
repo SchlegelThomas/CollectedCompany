@@ -1,0 +1,63 @@
+﻿@using CollectedCompany.Extensions
+<section id="ProductCatalogDashboard">
+    <div id="Spa-Wrapper" ng-app="ProductCatalog">
+        <div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>
+                        Product Catalog
+                    </h1>
+                </div>
+                <div class="col-lg-2">
+                    <a class="change-target" ui-sref="CategoryList({title:'Categories'})">Categories</a>
+                </div>
+                <div class="col-lg-1">
+                    <span class="change-target fa fa-2x fa-chevron-right"> </span>
+                </div>
+                <div class="col-lg-2">
+                    <a class="change-target" ui-sref="SubCategoryList({title:'SubCategories'})" ui-sref-opts="{ reload: true }">Sub Categories</a>
+                </div>
+                <div class="col-lg-1">
+                    <span class="change-target fa fa-2x fa-chevron-right"> </span>
+                </div>
+                <div class="col-lg-2">
+                    <a class="change-target" ui-sref="TagList({title:'Tags'})">Tags</a>
+                </div>
+                <div class="col-lg-1">
+                    <span class="change-target fa fa-2x fa-chevron-right"> </span>
+                </div>
+                <div class="col-lg-2">
+                    <a class="change-target" ui-sref="ProductList({title:'Products'})" ui-sref-opts="{ reload: true }">Products</a>
+                </div>
+            </div>
+            <div class="col-lg-12 card" id="FocusSection">
+                <div class="col-lg-12" ui-view="main">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12" ui-view="test">
+
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/app.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/config.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Services/dataService.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/productListController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/categoryListController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/subCategoryListController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/tagsListController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/productController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/categoryController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/subCategoryController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/tagController.js")
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Apps/ProductCatalog/Controllers/relatedProductController.js")
+
+}
+
+
+

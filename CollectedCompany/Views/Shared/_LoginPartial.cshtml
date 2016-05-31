@@ -1,0 +1,46 @@
+﻿@using CollectedCompany.Extensions
+@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav float-right">
+        <li>
+            @Html.ActionLink("ArticleBS", "Create", "Articles")
+        </li>
+        <li>
+            <a class="glyphicon glyphicon-list nav-icon"></a>
+        </li>
+        <li>
+            <div class="dropdown">
+                <button id="dropdownmenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: transparent;border: none; color: white;">
+                    <div id="YourAccount">
+                        <div id="AccountName">
+                            <span>@User.FirstName()&nbsp;@User.LastName()</span> 
+                        </div>
+                        <div id="Account">
+                            Your Account
+                            <span class="caret"></span>
+                        </div>
+                    </div>
+                    
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()" class="glyphicon glyphicon-off nav-icon"></a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav float-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

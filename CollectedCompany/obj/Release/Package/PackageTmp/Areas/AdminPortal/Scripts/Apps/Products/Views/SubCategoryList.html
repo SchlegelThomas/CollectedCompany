@@ -1,0 +1,18 @@
+﻿<div class="row" ng-controller="subCategoryListController as listController">
+    <div class="col-lg-12">
+        <button class="btn btn-primary manage"><span class="fa fa-cogs"></span></button>
+        <div class="col-lg-8 center-div">
+            <h1 class="align-center">Sub Categories</h1>
+            <input type="text" placeholder="Search..." ng-model="listController.search.$" class="form-control hipster-search" />
+        </div>
+        <div class="col-lg-12 search-results">
+            <div ng-repeat="subcategory in listController._subcategories | filter:listController.search track by subcategory.Id" class="col-lg-3 search-card category clearfix" ui-sref="ProductList({queryString:subcategory.Description, queryType: 'SubCategory'})">
+                <div class="col-lg-12">
+                    <h3>
+                        {{subcategory.Description}}
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

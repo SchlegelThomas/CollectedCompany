@@ -1,0 +1,95 @@
+﻿@model CollectedCompany.Models.ProfileViewModel
+
+@{
+    ViewBag.Title = "Profile";
+}
+<section class="breadcrumb-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <h2>My Account</h2>
+                <p>Account Dashboard</p>
+            </div>
+            <div class="col-xs-6">
+                <ol class="breadcrumb">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("My Account", "Dashboard", "Account")</li>
+                    <li class="active">Account Dashboard</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content account">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <aside class="sidebar">
+
+                    <!-- WIDGET:CATEGORIES - START -->
+                    <div class="widget widget-navigation">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">@Html.ActionLink("My Account", "Dashboard", "Account")</li>
+                            <li>@Html.ActionLink("Personal Information", "Profile", "Account")</li>
+                            <li>@Html.ActionLink("My Addresses", "Addresses", "Account")</li>
+                            <li>@Html.ActionLink("My Orders", "Orders", "Account")</li>
+                            <li>@Html.ActionLink("Wislist", "Wishlist", "Account")</li>
+                            <li>@Html.ActionLink("My Team", "Teams", "Account")</li>
+                            <li>@Html.ActionLink("My Contests", "Contests", "Account")</li>
+                        </ul>
+                    </div>
+                    <!-- WIDGET:CATEGORIES - END -->
+
+                </aside>
+            </div>
+            <div class="col-sm-9">
+                <article class="account-content">
+                    <h3>Welcome <span>@User.Identity.Name</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut feugiat mauris eget magna egestas porta. Curabitur sagittis sagittis neque rutrum congue. Donec lobortis dui sagittis, ultrices nunc ornare, ultricies elit.</p>
+                    <div class="icon-nav row">
+                        <div class="col-xs-6 col-md-6"><a href="/Account/Teams"><i class="fa fa-group"></i>My Team</a></div>
+                        <div class="col-xs-6 col-md-6"><a href="/Account/Contests"><i class="fa fa-trophy"></i>My Contests</a></div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="/Account/Addresses"><i class="fa fa-map-marker"></i>My Address</a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="/Account/Orders"><i class="fa fa-tasks"></i>My Orders</a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="/Account/Wishlist"><i class="fa fa-heart"></i>Wishlist</a>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <a href="/Account/Profile"><i class="fa fa-user"></i>Profile</a>
+                        </div>
+
+                    </div>
+                    <h4>Unpaid Orders</h4>
+                    <div class="table-responsive border">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="col-xs-3">Order ID</th>
+                                <th class="col-xs-3">Date</th>
+                                <th class="col-sm-2 hidden-xs">Items</th>
+                                <th class="col-xs-3">Total Price</th>
+                                <th class="col-xs-1"></th>
+                            </tr>
+                            <tr>
+                                <td><a href="single-order.html">#124321</a></td>
+                                <td>12th July 2015</td>
+                                <td class="hidden-xs">3</td>
+                                <td>$265</td>
+                                <td><a href="single-order.html" class="btn btn-primary btn-sm">Pay</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
