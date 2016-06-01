@@ -22,5 +22,13 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
         {
             return View();
         }
+
+        public PartialViewResult ColorPallete(string hexValue)
+        {
+            var toUpdate = AdminPortalResources.ApplicationResources.HtmlColors.FirstOrDefault(x => x.CssSelector == "UserTest");
+            toUpdate.Value = hexValue;
+            AdminPortalResources.ApplicationResources.SaveChanges();
+            return PartialView("_ColorPallete");
+        }
     }
 }

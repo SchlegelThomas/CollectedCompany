@@ -130,3 +130,4 @@ C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\Collected
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Debug\CollectedCompany.Migrations.Shared.ProductUpdateModel.resources
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Debug\CollectedCompany.Migrations.Application.Settings.resources
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Debug\CollectedCompany.Migrations.Shared.Settings.resources
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\dotless.NamedThemes.dll

@@ -1,4 +1,25 @@
-﻿h1 {
-  color: getCustomColor(usersThemeAttribute);
+﻿/*.analog(@color, @variant, @property) {
+  @first: spin(@color, 30);
+  @second: spin(@color, -30);
+  @list: @first, @second;
+  @return: extract(@list, @variant);
+  @{property}: @return;
 }
+
+.triad(@color, @variant, @property) {
+  @first: spin(@color, 120);
+  @second: spin(@color, -120);
+  @list: @first, @second;
+  @return: extract(@list, @variant);
+  @{property}: @return;
+}
+
+.quad(@color, @variant, @property) {
+  @first: spin(@color, 90);
+  @second: spin(@color, -90);
+  @third: spin(@color, 180);
+  @list: @first, @second, @third;
+  @return: extract(@list, @variant);
+  @{property}: @return;
+}*/
 /*# sourceMappingURL=Master.css.map */

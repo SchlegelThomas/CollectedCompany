@@ -19,6 +19,7 @@ namespace CollectedCompany
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.RegisterDependencies();
             AutomapperConfig.Register();
+            DotLessConfig.Configure();
         }
     }
 }

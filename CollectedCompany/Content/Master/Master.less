@@ -1,6 +1,53 @@
-﻿@PrimaryColor: getCustomColor(usersThemeAttribute);
+﻿
+@theme-base-color:getCustomColor(UserThemePrimaryColor);
+@theme-base-secondary-color:getCustomColor(UserThemeSecondaryColor);
+@theme-base-tertiary-color:getCustomColor(UserThemeTertiaryColor);
 
-
-h1{
-    color:@PrimaryColor;
+/*.analog(@color, @variant, @property) {
+  @first: spin(@color, 30);
+  @second: spin(@color, -30);
+  @list: @first, @second;
+  @return: extract(@list, @variant);
+  @{property}: @return;
 }
+
+.triad(@color, @variant, @property) {
+  @first: spin(@color, 120);
+  @second: spin(@color, -120);
+  @list: @first, @second;
+  @return: extract(@list, @variant);
+  @{property}: @return;
+}
+
+.quad(@color, @variant, @property) {
+  @first: spin(@color, 90);
+  @second: spin(@color, -90);
+  @third: spin(@color, 180);
+  @list: @first, @second, @third;
+  @return: extract(@list, @variant);
+  @{property}: @return;
+}*/
+
+.color-palette(@color, @swatches, @step, @index: 0) when (@index =< (@swatches - 1)) {
+
+  .cgrid-@{index} {
+    background-color: spin(@color, (@index * @step));
+  }
+  .color-palette(@color, @swatches, @step, (@index + 1));
+}
+
+.color-palette1(@swatches, @color, @index: 0) when (@index =< (@swatches - 1)) {
+  
+    .shades-@{index} {
+      background-color: lighten(@color, (@index * 10%));
+    }
+  
+  
+    .tints-@{index} {
+      background-color: darken(@color, (@index * 10%));
+    }
+  
+  .color-palette1(@swatches, @color, (@index + 1));
+}
+
+
