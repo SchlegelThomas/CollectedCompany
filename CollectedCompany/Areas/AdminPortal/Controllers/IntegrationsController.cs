@@ -7,7 +7,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class IntegrationsController : AdminBaseController
+    public partial class IntegrationsController : AdminBaseController
     {
         public IntegrationsController(IAdminPortalResources adminResources) 
             : base(adminResources)
@@ -15,22 +15,22 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             
         }
 
-        public ActionResult Dashboard()
+        public virtual ActionResult Dashboard()
         {
             return View();
         }
 
-        public ActionResult GoogleMerchants()
+        public virtual ActionResult GoogleMerchants()
         {
             return View();
         }
 
-        public ActionResult TcgPlayer()
+        public virtual ActionResult TcgPlayer()
         {
             return View();
         }
 
-        public ActionResult Amazon()
+        public virtual ActionResult Amazon()
         {
             return View();
         }

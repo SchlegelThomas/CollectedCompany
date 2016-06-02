@@ -6,7 +6,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class ProductCatalogController : AdminBaseController
+    public partial class ProductCatalogController : AdminBaseController
     {
         public ProductCatalogController(IAdminPortalResources adminResources)
             : base(adminResources)
@@ -14,62 +14,62 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
 
         }
 
-        public ActionResult Dashboard()
+        public virtual ActionResult Dashboard()
         {
 
             return View();
         }
 
-        public JsonResult GetProducts()
+        public virtual JsonResult GetProducts()
         {
             var products = AdminPortalResources.SharedResources.Products.ToList();
 
             return JsonGetResponse(new { Success = true, Data = products });
         }
 
-        public JsonResult GetCategories()
+        public virtual JsonResult GetCategories()
         {
             var products = AdminPortalResources.SharedResources.ProductCategories.ToList();
 
             return JsonGetResponse(new { Success = true, Data = products });
         }
 
-        public JsonResult GetSubCategories()
+        public virtual JsonResult GetSubCategories()
         {
             var products = AdminPortalResources.SharedResources.SubCategories.ToList();
 
             return JsonGetResponse(new { Success = true, Data = products });
         }
 
-        public JsonResult GetTags()
+        public virtual JsonResult GetTags()
         {
             var products = AdminPortalResources.SharedResources.ProductTags.ToList();
 
             return JsonGetResponse(new { Success = true, Data = products });
         }
 
-        public JsonResult GetProductById(Guid id)
+        public virtual JsonResult GetProductById(Guid id)
         {
             var product = AdminPortalResources.SharedResources.Products.FirstOrDefault(x => x.Id == id) ?? new Product();
 
             return JsonGetResponse(new { Success = true, Data = product });
         }
 
-        public JsonResult GetCategoryById(int id)
+        public virtual JsonResult GetCategoryById(int id)
         {
             var product = AdminPortalResources.SharedResources.ProductCategories.FirstOrDefault(x => x.Id == id) ?? new ProductCategory();
 
             return JsonGetResponse(new { Success = true, Data = product });
         }
 
-        public JsonResult GetSubCategoryById(int id)
+        public virtual JsonResult GetSubCategoryById(int id)
         {
             var product = AdminPortalResources.SharedResources.SubCategories.FirstOrDefault(x => x.Id == id) ?? new SubCategory();
 
             return JsonGetResponse(new { Success = true, Data = product });
         }
 
-        public JsonResult GetTagById(int id)
+        public virtual JsonResult GetTagById(int id)
         {
             var product = AdminPortalResources.SharedResources.ProductTags.FirstOrDefault(x => x.Id == id) ?? new ProductTag();
 
@@ -78,7 +78,7 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
 
 
 
-        public JsonResult AddProduct(Product product)
+        public virtual JsonResult AddProduct(Product product)
         {
 
             return JsonGetResponse(new { Success = true });

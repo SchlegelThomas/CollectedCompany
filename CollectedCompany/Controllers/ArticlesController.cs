@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using CollectedCompany.Models;
 using CollectedCompany.Models.Application;
+using CollectedCompany.ServiceLayer.Integrations.Site.Bindings;
 
 namespace CollectedCompany.Controllers
 {
     public class ArticlesController : BaseController
     {
-        private readonly ApplicationDbContext _dbContext;
-
-        public ArticlesController(ApplicationDbContext dbContext)
-        {
-            this._dbContext = dbContext;
-        }
+        public ArticlesController(IWebsiteResources websiteResources) : base(websiteResources) { }
 
         // GET: Articles
         public ActionResult Index()
         {
-            return View(_dbContext.Articles.ToList());
+            return View(WebsiteResources.ApplicationResources.Articles.ToList());
         }
 
         // GET: Articles/Details/5
@@ -33,7 +24,7 @@ namespace CollectedCompany.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = _dbContext.Articles.Find(id);
+            Article article = WebsiteResources.ApplicationResources.Articles.Find(id);
             if (article == null)
             {
                 return HttpNotFound();
@@ -56,8 +47,8 @@ namespace CollectedCompany.Controllers
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Articles.Add(article);
-                _dbContext.SaveChanges();
+                WebsiteResources.ApplicationResources.Articles.Add(article);
+                WebsiteResources.ApplicationResources.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -71,7 +62,7 @@ namespace CollectedCompany.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = _dbContext.Articles.Find(id);
+            Article article = WebsiteResources.ApplicationResources.Articles.Find(id);
             if (article == null)
             {
                 return HttpNotFound();
@@ -88,8 +79,8 @@ namespace CollectedCompany.Controllers
         {
             if (ModelState.IsValid)
             {
-                _dbContext.Entry(article).State = EntityState.Modified;
-                _dbContext.SaveChanges();
+                WebsiteResources.ApplicationResources.Entry(article).State = EntityState.Modified;
+                WebsiteResources.ApplicationResources.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(article);
@@ -102,7 +93,7 @@ namespace CollectedCompany.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Article article = _dbContext.Articles.Find(id);
+            Article article = WebsiteResources.ApplicationResources.Articles.Find(id);
             if (article == null)
             {
                 return HttpNotFound();
@@ -115,9 +106,9 @@ namespace CollectedCompany.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Article article = _dbContext.Articles.Find(id);
-            _dbContext.Articles.Remove(article);
-            _dbContext.SaveChanges();
+            Article article = WebsiteResources.ApplicationResources.Articles.Find(id);
+            WebsiteResources.ApplicationResources.Articles.Remove(article);
+            WebsiteResources.ApplicationResources.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -125,7 +116,7 @@ namespace CollectedCompany.Controllers
         {
             if (disposing)
             {
-                _dbContext.Dispose();
+                WebsiteResources.ApplicationResources.Dispose();
             }
             base.Dispose(disposing);
         }

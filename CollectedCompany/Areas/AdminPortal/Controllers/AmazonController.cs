@@ -6,7 +6,7 @@ using Nager.AmazonProductAdvertising.Model;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class AmazonController : AdminBaseController
+    public partial class AmazonController : AdminBaseController
     {
         private readonly IAmazonProductAdvertisingService _amazonService;
 
@@ -16,14 +16,14 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             _amazonService = amazonService;
         }
 
-        public ActionResult AmazonProductList()
+        public virtual ActionResult AmazonProductList()
         {
             
             
             return View();
         }
 
-        public PartialViewResult Search(String searchTerms, AmazonSearchIndex category)
+        public virtual PartialViewResult Search(String searchTerms, AmazonSearchIndex category)
         {
             var results = _amazonService.Search(searchTerms, category);
 

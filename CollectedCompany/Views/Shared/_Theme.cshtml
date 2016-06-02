@@ -1,0 +1,14 @@
+﻿@model CollectedCompany.Models.Shared.HtmlTemplate
+
+@{
+    var bundlesName = "~/bundles/" + Model.TemplateUrl;
+}
+
+@foreach (var font in Model.Fonts)
+{
+    <link href='@font.Value' rel='stylesheet' type='text/css'>
+}
+
+@Styles.Render(bundlesName)
+@Styles.Render(bundlesName + "/Less")
+@Scripts.Render(bundlesName + "/Scripts")

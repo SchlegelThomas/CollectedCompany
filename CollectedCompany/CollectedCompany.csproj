@@ -40,14 +40,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.3.4.0\lib\net40\Autofac.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -89,14 +81,6 @@
       <HintPath>..\packages\WindowsAzure.Storage.7.0.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvcSiteMapProvider, Version=4.6.22.0, Culture=neutral, PublicKeyToken=1923abe4657913cc, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvcSiteMapProvider.MVC5.Core.4.6.22\lib\net45\MvcSiteMapProvider.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MvcSiteMapProvider.WebActivator, Version=4.6.22.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvcSiteMapProvider.MVC5.4.6.22\lib\net45\MvcSiteMapProvider.WebActivator.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Nager.AmazonProductAdvertising, Version=1.0.12.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nager.AmazonProductAdvertising.1.0.12\lib\net45\Nager.AmazonProductAdvertising.dll</HintPath>
       <Private>True</Private>
@@ -107,6 +91,22 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.3.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -124,13 +124,37 @@
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.4, Culture=neutral, PublicKeyToken=0be84d52cfe0b414, processorArchitecture=MSIL">
       <HintPath>..\packages\BenTaylor.Microsoft.AspNet.Web.Optimization.1.1.0.4\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -143,33 +167,9 @@
     </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
-    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
-      <HintPath>..\packages\WebActivatorEx.2.0.1\lib\net40\WebActivatorEx.dll</HintPath>
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -233,12 +233,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DotLessConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\NinjectDependencyResolver.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\AdminPortal\AdminPortalAreaRegistration.cs" />
@@ -256,6 +257,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ThemeController.cs" />
     <Compile Include="Extensions\CommonExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -315,6 +317,7 @@
     <Compile Include="Models\Shared\DbContext.cs" />
     <Compile Include="Models\Application\StoreFront.cs" />
     <Compile Include="Models\Application\Team.cs" />
+    <Compile Include="Plugins\CustomViewEngine.cs" />
     <Compile Include="Plugins\GetCustomColor.cs" />
     <Compile Include="Plugins\GetCustomFontSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -322,6 +325,8 @@
     <Compile Include="ServiceLayer\Integrations\AdminPortal\Impl\AdminPortalResources.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Bindings\IAmazonProductAdvertising.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Impl\AmazonProductAdvertisingService.cs" />
+    <Compile Include="ServiceLayer\Integrations\Site\Bindings\IWebsiteResources.cs" />
+    <Compile Include="ServiceLayer\Integrations\Site\Impl\WebsiteResources.cs" />
     <Compile Include="Services\MtgJsonCardConverter.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -389,110 +394,100 @@
     <Content Include="Content\Admin\Timeline.min.css">
       <DependentUpon>Timeline.css</DependentUpon>
     </Content>
-    <Content Include="Content\assets\css\animate.css" />
-    <Content Include="Content\assets\css\bootstrap.min.css" />
-    <Content Include="Content\assets\css\color-switcher.css" />
-    <Content Include="Content\assets\css\color\blue.css" />
-    <Content Include="Content\assets\css\color\brown.css" />
-    <Content Include="Content\assets\css\color\dark-blue.css" />
-    <Content Include="Content\assets\css\color\dark-red.css" />
-    <Content Include="Content\assets\css\color\green.css" />
-    <Content Include="Content\assets\css\color\light-green.css" />
-    <Content Include="Content\assets\css\color\orange.css" />
-    <Content Include="Content\assets\css\color\purple.css" />
-    <Content Include="Content\assets\css\color\red.css" />
-    <Content Include="Content\assets\css\color\yellow.css" />
-    <Content Include="Content\assets\css\custom.css" />
-    <Content Include="Content\assets\css\dragtable.css" />
-    <Content Include="Content\assets\css\font-awesome.min.css" />
-    <Content Include="Content\assets\css\grabbing.png" />
-    <Content Include="Content\assets\css\owl.carousel.css" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\assets\icons\icon_facebook_circle_gray.png" />
-    <Content Include="Content\assets\icons\icon_google_circle_gray.png" />
-    <Content Include="Content\assets\icons\icon_instagram_circle_gray.png" />
-    <Content Include="Content\assets\icons\icon_linkedin_circle_gray.png" />
-    <Content Include="Content\assets\icons\icon_twitter_circle_gray.png" />
-    <Content Include="Content\assets\icons\icon_youtube_circle_gray.png" />
-    <Content Include="Content\assets\images\angle-down.png" />
-    <Content Include="Content\assets\images\avatar\avatar_01.jpg" />
-    <Content Include="Content\assets\images\avatar\avatar_02.jpg" />
-    <Content Include="Content\assets\images\avatar\avatar_03.jpg" />
-    <Content Include="Content\assets\images\avatar\avatar_04.jpg" />
-    <Content Include="Content\assets\images\blog\blog-1.jpg" />
-    <Content Include="Content\assets\images\blog\blog-2.jpg" />
-    <Content Include="Content\assets\images\blog\blog-3.jpg" />
-    <Content Include="Content\assets\images\blog\blog-4.jpg" />
-    <Content Include="Content\assets\images\categories\category-1.jpg" />
-    <Content Include="Content\assets\images\categories\category-2.jpg" />
-    <Content Include="Content\assets\images\categories\category-3.jpg" />
-    <Content Include="Content\assets\images\categories\category-4.jpg" />
-    <Content Include="Content\assets\images\categories\category-5.png" />
-    <Content Include="Content\assets\images\categories\category-6.png" />
-    <Content Include="Content\assets\images\categories\category-7.png" />
-    <Content Include="Content\assets\images\categories\category-8.png" />
-    <Content Include="Content\assets\images\clients\1.png" />
-    <Content Include="Content\assets\images\clients\2.png" />
-    <Content Include="Content\assets\images\clients\3.png" />
-    <Content Include="Content\assets\images\clients\4.png" />
-    <Content Include="Content\assets\images\clients\5.png" />
-    <Content Include="Content\assets\images\clients\6.png" />
-    <Content Include="Content\assets\images\clients\7.png" />
-    <Content Include="Content\assets\images\creditcards\amex.png" />
-    <Content Include="Content\assets\images\creditcards\discover.png" />
-    <Content Include="Content\assets\images\creditcards\mastercard.png" />
-    <Content Include="Content\assets\images\creditcards\visa.png" />
-    <Content Include="Content\assets\images\default-avatar.png" />
-    <Content Include="Content\assets\images\flags\cz.png" />
-    <Content Include="Content\assets\images\flags\de.png" />
-    <Content Include="Content\assets\images\flags\us.png" />
-    <Content Include="Content\assets\images\lookbook-1.png" />
-    <Content Include="Content\assets\images\lookbook-2.png" />
-    <Content Include="Content\assets\images\map.jpg" />
-    <Content Include="Content\assets\images\megamenu.png" />
-    <Content Include="Content\assets\images\mtg-stockphoto-1.jpg" />
-    <Content Include="Content\assets\images\nashville-bridge-skyline.jpg" />
-    <Content Include="Content\assets\images\pattern.png" />
-    <Content Include="Content\assets\images\products\product-1.jpg" />
-    <Content Include="Content\assets\images\products\product-1b.jpg" />
-    <Content Include="Content\assets\images\products\product-2.jpg" />
-    <Content Include="Content\assets\images\products\product-3.jpg" />
-    <Content Include="Content\assets\images\products\product-4.jpg" />
-    <Content Include="Content\assets\images\showcase.png" />
-    <Content Include="Content\assets\images\slide-1.jpg" />
-    <Content Include="Content\assets\images\slide-2.jpg" />
-    <Content Include="Content\assets\images\slide-3.jpg" />
-    <Content Include="Content\assets\images\slide-4.jpg" />
-    <Content Include="Content\assets\images\slide-5.jpg" />
-    <Content Include="Content\assets\images\slide-6.jpg" />
-    <Content Include="Content\assets\images\slide-7.jpg" />
-    <Content Include="Content\assets\images\store-1.jpg" />
-    <Content Include="Content\assets\images\store-2.jpg" />
-    <Content Include="Content\assets\images\store-3.jpg" />
-    <Content Include="Content\assets\images\store-4.jpg" />
-    <Content Include="Content\assets\images\store-5.jpg" />
-    <Content Include="Content\assets\js\bootstrap-hover-dropdown.min.js" />
-    <Content Include="Content\assets\js\bootstrap.min.js" />
-    <Content Include="Content\assets\js\color-switcher.js" />
-    <Content Include="Content\assets\js\custom.js" />
-    <Content Include="Content\assets\js\jquery.card.js" />
-    <Content Include="Content\assets\js\jquery.dragtable.js" />
-    <Content Include="Content\assets\js\jquery.mb.YTPlayer.min.js" />
-    <Content Include="Content\assets\js\owl.carousel.min.js" />
-    <Content Include="Content\assets\js\SmoothScroll.js" />
-    <Content Include="Content\assets\js\twitterFetcher_min.js" />
-    <Content Include="Content\bootstrap-datepicker.css" />
-    <Content Include="Content\bootstrap-datepicker.min.css" />
-    <Content Include="Content\bootstrap-datepicker.standalone.css" />
-    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
-    <Content Include="Content\bootstrap-datepicker3.css" />
-    <Content Include="Content\bootstrap-datepicker3.min.css" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Themes\MarketPlace\assets\css\color\Pallette.css">
+      <DependentUpon>Pallette.less</DependentUpon>
+    </Content>
+    <Content Include="Themes\MarketPlace\assets\css\color\Pallette.min.css">
+      <DependentUpon>Pallette.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\MarketPlace\assets\css\custom.css" />
+    <Content Include="Themes\MarketPlace\assets\css\dragtable.css" />
+    <Content Include="Themes\MarketPlace\assets\images\grabbing.png" />
+    <Content Include="Content\owl.carousel.css" />
+    <Content Include="Themes\MarketPlace\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_facebook_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_google_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_instagram_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_linkedin_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_twitter_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\icons\icon_youtube_circle_gray.png" />
+    <Content Include="Themes\MarketPlace\assets\images\angle-down.png" />
+    <Content Include="Themes\MarketPlace\assets\images\avatar\avatar_01.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\avatar\avatar_02.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\avatar\avatar_03.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\avatar\avatar_04.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\blog\blog-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\blog\blog-2.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\blog\blog-3.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\blog\blog-4.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-2.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-3.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-4.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-5.png" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-6.png" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-7.png" />
+    <Content Include="Themes\MarketPlace\assets\images\categories\category-8.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\1.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\2.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\3.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\4.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\5.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\6.png" />
+    <Content Include="Themes\MarketPlace\assets\images\clients\7.png" />
+    <Content Include="Themes\MarketPlace\assets\images\creditcards\amex.png" />
+    <Content Include="Themes\MarketPlace\assets\images\creditcards\discover.png" />
+    <Content Include="Themes\MarketPlace\assets\images\creditcards\mastercard.png" />
+    <Content Include="Themes\MarketPlace\assets\images\creditcards\visa.png" />
+    <Content Include="Themes\MarketPlace\assets\images\default-avatar.png" />
+    <Content Include="Themes\MarketPlace\assets\images\flags\cz.png" />
+    <Content Include="Themes\MarketPlace\assets\images\flags\de.png" />
+    <Content Include="Themes\MarketPlace\assets\images\flags\us.png" />
+    <Content Include="Themes\MarketPlace\assets\images\lookbook-1.png" />
+    <Content Include="Themes\MarketPlace\assets\images\lookbook-2.png" />
+    <Content Include="Themes\MarketPlace\assets\images\map.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\megamenu.png" />
+    <Content Include="Themes\MarketPlace\assets\images\mtg-stockphoto-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\nashville-bridge-skyline.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\pattern.png" />
+    <Content Include="Themes\MarketPlace\assets\images\products\product-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\products\product-1b.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\products\product-2.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\products\product-3.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\products\product-4.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\showcase.png" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-2.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-3.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-4.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-5.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-6.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\slide-7.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\store-1.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\store-2.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\store-3.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\store-4.jpg" />
+    <Content Include="Themes\MarketPlace\assets\images\store-5.jpg" />
+    <Content Include="Themes\MarketPlace\assets\js\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Themes\MarketPlace\assets\js\custom.js" />
+    <Content Include="Themes\MarketPlace\assets\js\jquery.card.js" />
+    <Content Include="Themes\MarketPlace\assets\js\jquery.dragtable.js" />
+    <Content Include="Scripts\jquery.mb.YTPlayer.min.js" />
+    <Content Include="Scripts\owl.carousel.min.js" />
+    <Content Include="Themes\MarketPlace\assets\js\SmoothScroll.js" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Bootstrap\bootstrap.css" />
+    <Content Include="Content\Bootstrap\bootstrap.min.css" />
     <Content Include="Content\Design.css">
       <DependentUpon>Design.less</DependentUpon>
     </Content>
@@ -502,22 +497,8 @@
     <Content Include="Content\eskju.jquery.scrollflow.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\Images\Blacks.jpg" />
-    <Content Include="Content\Images\Blues.jpg" />
-    <Content Include="Content\Images\Catacomb.jpg" />
-    <Content Include="Content\Images\Crypt.jpg" />
-    <Content Include="Content\Images\Delta.jpg" />
     <Content Include="Content\Images\favicon.ico" />
-    <Content Include="Content\Images\Foot.jpg" />
-    <Content Include="Content\Images\Fountain.jpg" />
-    <Content Include="Content\Images\Greens.jpg" />
-    <Content Include="Content\Images\Greens2.jpg" />
-    <Content Include="Content\Images\Heath.jpg" />
     <Content Include="Content\Images\Logo.png" />
-    <Content Include="Content\Images\Marsh.jpg" />
-    <Content Include="Content\Images\Mesa.jpg" />
-    <Content Include="Content\Images\Mire.jpg" />
-    <Content Include="Content\Images\Misty.jpg" />
     <Content Include="Content\Images\sort_asc.png" />
     <Content Include="Content\Images\sort_asc_disabled.png" />
     <Content Include="Content\Images\sort_both.png" />
@@ -572,29 +553,29 @@
     <Content Include="Content\Design.css.map">
       <DependentUpon>Design.css</DependentUpon>
     </Content>
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap.min.css.map" />
     <Content Include="Content\skins\lightgray\fonts\tinymce-small.eot" />
     <Content Include="Content\skins\lightgray\fonts\tinymce-small.ttf" />
     <Content Include="Content\skins\lightgray\fonts\tinymce-small.woff" />
     <Content Include="Content\skins\lightgray\fonts\tinymce.eot" />
     <Content Include="Content\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Content\skins\lightgray\fonts\tinymce.woff" />
-    <Content Include="Content\bootstrap-datepicker.css.map" />
-    <Content Include="Content\bootstrap-datepicker.min.css.map" />
-    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
-    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
-    <Content Include="Content\bootstrap-datepicker3.css.map" />
-    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
-    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\assets\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\Bootstrap\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Themes\MarketPlace\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Themes\MarketPlace\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Themes\MarketPlace\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Themes\MarketPlace\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Themes\MarketPlace\assets\fonts\FontAwesome.otf" />
     <Content Include="AllSets-x.json" />
     <Content Include="AllSetsArray-x.json" />
     <Content Include="Content\Master\Master.less" />
@@ -628,7 +609,6 @@
     <Content Include="Areas\AdminPortal\Views\Product\_ProductListing.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Product\Dashboard.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Product\_ProductDetails.cshtml" />
-    <Content Include="Mvc.sitemap" />
     <Content Include="Areas\AdminPortal\Views\ProductCatalog\Dashboard.cshtml" />
     <Content Include="Content\NaturalLanguageForm.less" />
     <Content Include="Content\NaturalLanguageForm.css.map">
@@ -641,14 +621,62 @@
       <DependentUpon>ColorPallete.css</DependentUpon>
     </Content>
     <Content Include="Areas\AdminPortal\Views\Theme\_ColorPallete.cshtml" />
-    <None Include="MvcSiteMapSchema.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\PublishProfiles\JasonCityGames - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\JasonCityGames - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MusicCityGames - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\MusicCityGames - Web Deploy.pubxml" />
+    <Content Include="Scripts\ColorPicker\reference\colorPicker.js.map" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\README.md" />
+    <Content Include="Scripts\ColorPicker\reference\jQuery_implementation\README.md" />
+    <Content Include="Scripts\ColorPicker\reference\LICENSE.md" />
+    <Content Include="Scripts\ColorPicker\reference\package.json" />
+    <Content Include="Scripts\ColorPicker\reference\README.md" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ColorPicker\reference\color.all.min.js" />
+    <Content Include="Scripts\ColorPicker\reference\colorPicker.data.js" />
+    <Content Include="Scripts\ColorPicker\reference\colorPicker.js" />
+    <Content Include="Scripts\ColorPicker\reference\colors.js" />
+    <Content Include="Scripts\ColorPicker\reference\developer\colorPicker.css" />
+    <Content Include="Scripts\ColorPicker\reference\developer\colorPicker.dev.js" />
+    <Content Include="Scripts\ColorPicker\reference\developer\colorPicker.html" />
+    <Content Include="Scripts\ColorPicker\reference\developer\colorPicker.sys.css" />
+    <Content Include="Scripts\ColorPicker\reference\developer\fusion.html" />
+    <Content Include="Scripts\ColorPicker\reference\developer\patches.html" />
+    <Content Include="Scripts\ColorPicker\reference\developer\patches.js" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_bgs.png" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_blank.cur" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_blank.png" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_horizontal.png" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_icons.png" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_patches.png" />
+    <Content Include="Scripts\ColorPicker\reference\developer\_vertical.png" />
+    <Content Include="Scripts\ColorPicker\reference\Gruntfile.js" />
+    <Content Include="Scripts\ColorPicker\reference\images\favicon.ico" />
+    <Content Include="Scripts\ColorPicker\reference\images\screen-shot-all.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\screen-shot-L.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\screen-shot-M.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\screen-shot-XS.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\screen-shot-XXS.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_bgs.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_blank.cur" />
+    <Content Include="Scripts\ColorPicker\reference\images\_blank.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_horizontal.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_icons.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_patches.png" />
+    <Content Include="Scripts\ColorPicker\reference\images\_vertical.png" />
+    <Content Include="Scripts\ColorPicker\reference\index.css" />
+    <Content Include="Scripts\ColorPicker\reference\index.html" />
+    <Content Include="Scripts\ColorPicker\reference\index.js" />
+    <Content Include="Scripts\ColorPicker\reference\info.txt" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\index.html" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\jsColor.css" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\jsColor.js" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\jsColorPicker.min.js" />
+    <Content Include="Scripts\ColorPicker\reference\javascript_implementation\_temp.js" />
+    <Content Include="Scripts\ColorPicker\reference\jQuery_implementation\index.html" />
+    <Content Include="Scripts\ColorPicker\reference\jQuery_implementation\jqColor.css" />
+    <Content Include="Scripts\ColorPicker\reference\jQuery_implementation\jqColor.js" />
+    <Content Include="Scripts\ColorPicker\reference\jQuery_implementation\jQueryColorPicker.min.js" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\eskju.jquery.scrollflow.css" />
@@ -800,14 +828,6 @@
     <Content Include="Scripts\Site.css" />
     <Content Include="Scripts\Snippits\naturalLanguageForm.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.ascx" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -819,51 +839,8 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Account\Profile.cshtml" />
-    <Content Include="Views\Articles\Create.cshtml" />
-    <Content Include="Views\Articles\Delete.cshtml" />
-    <Content Include="Views\Articles\Details.cshtml" />
-    <Content Include="Views\Articles\Edit.cshtml" />
-    <Content Include="Views\Articles\Index.cshtml" />
-    <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\_Categories.cshtml" />
-    <Content Include="Views\Home\_Products.cshtml" />
-    <Content Include="Views\Home\_Location.cshtml" />
-    <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Views\Home\_MemberJumboTron.cshtml" />
-    <Content Include="Views\Home\_PublicJumboTron.cshtml" />
-    <Content Include="Views\Account\Dashboard.cshtml" />
-    <Content Include="Views\Account\Addresses.cshtml" />
-    <Content Include="Views\Account\Orders.cshtml" />
-    <Content Include="Views\Account\Wishlist.cshtml" />
-    <Content Include="Views\Account\Teams.cshtml" />
-    <Content Include="Views\Account\Contests.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Admin\Index.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Admin\Customize.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Admin\Inventory.cshtml" />
@@ -884,29 +861,66 @@
     <Content Include="Areas\AdminPortal\Views\Integrations\GoogleMerchants.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Integrations\TcgPlayer.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Integrations\Amazon.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Shared\_Theme.cshtml" />
+    <Content Include="Themes\MarketPlace\assets\css\color\Pallette.less" />
+    <Content Include="Themes\MarketPlace\assets\css\color\Pallette.css.map">
+      <DependentUpon>Pallette.css</DependentUpon>
+    </Content>
+    <Content Include="Themes\MarketPlace\Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Addresses.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Contests.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Dashboard.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Login.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Orders.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Profile.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Register.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ResetPassword.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\SendCode.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Teams.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\VerifyCode.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Account\Wishlist.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Articles\Create.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Articles\Delete.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Articles\Details.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Articles\Edit.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Articles\Index.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\_Categories.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\_Location.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\_MemberJumboTron.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\_Products.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\_PublicJumboTron.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\About.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\Contact.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Home\Index.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\Index.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\SetPassword.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Shared\_Footer.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Shared\_Header.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Shared\Error.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Shared\Lockout.cshtml" />
+    <Content Include="Themes\MarketPlace\Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminPortal\Views\AdminBase\" />
-    <Folder Include="Content\Dynamic\Templates\MarketPlace\" />
-    <Folder Include="Content\Dynamic\Templates\Parallax\" />
-    <Folder Include="Content\Dynamic\Templates\Sidebar\" />
-    <Folder Include="Themes\" />
+    <Folder Include="Views\Theme\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\Application\201605261728059_Init.resx">
@@ -939,6 +953,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

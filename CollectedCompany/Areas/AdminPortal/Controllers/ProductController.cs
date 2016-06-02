@@ -7,7 +7,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class ProductController : AdminBaseController
+    public partial class ProductController : AdminBaseController
     {
         public ProductController(IAdminPortalResources adminResources) 
             : base(adminResources)
@@ -15,27 +15,27 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             
         }
 
-        public ActionResult Dashboard()
+        public virtual ActionResult Dashboard()
         {
             return View();
         }
 
 
-        public PartialViewResult ProductListing()
+        public virtual PartialViewResult ProductListing()
         {
             var products = AdminPortalResources.SharedResources.Products.ToList();
 
             return PartialView("_ProductListing", products);
         }
 
-        public PartialViewResult ProductDetails(Guid productId)
+        public virtual PartialViewResult ProductDetails(Guid productId)
         {
             var product = AdminPortalResources.SharedResources.Products.FirstOrDefault(x => x.Id == productId) ?? new Product();
 
             return PartialView("_ProductDetails", product);
         }
 
-        public JsonResult SaveProduct(Product product)
+        public virtual JsonResult SaveProduct(Product product)
         {
             return Json(new {Success = true}, JsonRequestBehavior.AllowGet);
         }

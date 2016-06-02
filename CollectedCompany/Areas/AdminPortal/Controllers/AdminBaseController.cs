@@ -3,7 +3,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class AdminBaseController : Controller
+    public partial class AdminBaseController : Controller
     {
         public IAdminPortalResources AdminPortalResources;
 
@@ -13,7 +13,7 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
         }
 
 
-        public JsonResult JsonGetResponse(object dynamicJsonResponse)
+        public virtual JsonResult JsonGetResponse(object dynamicJsonResponse)
         {
             return Json(dynamicJsonResponse, JsonRequestBehavior.AllowGet);
         }

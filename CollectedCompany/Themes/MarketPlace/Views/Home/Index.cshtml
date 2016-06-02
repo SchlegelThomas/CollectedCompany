@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Theme{
+
+    @{ Html.RenderAction("Theme", "SiteTheme"); }
+}
+
+@{
+    Html.RenderPartial(Request.IsAuthenticated ? "_MemberJumboTron" : "_PublicJumboTron");
+}
+
+
+
+@{Html.RenderPartial("_Categories");}
+
+@{Html.RenderPartial("_Products");}
+
+@{Html.RenderPartial("_Location");}
+
+
+
+
+
+@section Scripts{
+    <script src="~/Scripts/Home/home.js"></script>
+}

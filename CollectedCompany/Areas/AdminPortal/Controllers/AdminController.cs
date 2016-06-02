@@ -3,8 +3,8 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    
-    public class AdminController : AdminBaseController
+
+    public partial class AdminController : AdminBaseController
     {
         public AdminController(IAdminPortalResources adminPortalResources)
             : base(adminPortalResources)
@@ -13,46 +13,46 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
         }
 
         // GET: Admin
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Customize()
-        {
-
-            return View();
-        }
-
-        public ActionResult Inventory()
-        {
-            return View();
-        }
-
-        public ActionResult Customers()
+        public virtual ActionResult Customize()
         {
 
             return View();
         }
 
-        public ActionResult Reports()
+        public virtual ActionResult Inventory()
         {
             return View();
         }
 
-        public ActionResult Dashboard()
+        public virtual ActionResult Customers()
+        {
+
+            return View();
+        }
+
+        public virtual ActionResult Reports()
         {
             return View();
         }
 
-        public ActionResult Categories()
+        public virtual ActionResult Dashboard()
         {
             return View();
         }
 
-        
+        public virtual ActionResult Categories()
+        {
+            return View();
+        }
 
-        public ActionResult Transfers()
+
+
+        public virtual ActionResult Transfers()
         {
             return View();
         }

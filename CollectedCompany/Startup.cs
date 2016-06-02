@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using CollectedCompany.App_Start;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(CollectedCompany.Startup))]
@@ -9,6 +10,7 @@ namespace CollectedCompany
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            
         }
     }
 }

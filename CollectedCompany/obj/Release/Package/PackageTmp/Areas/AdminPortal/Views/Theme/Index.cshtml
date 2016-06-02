@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-6">
-                <input type="text" placeholder="Hex Code Please: Something Like '#FFFFF' " class="form-control input-lg" id="ColorTest"/>
+                <input type="text" placeholder="Click me to get started" readonly="readonly" class="form-control input-lg" id="ColorTest"/>
             </div>
             <div class="col-lg-6">
                 <button id="Go" class="btn btn-lg btn-primary">Generate Color Scheme</button>
@@ -34,6 +34,10 @@
 
             });
         });
+
+        var picker = $('#ColorTest').colorPicker();
+
+        
 
     });
 </script>

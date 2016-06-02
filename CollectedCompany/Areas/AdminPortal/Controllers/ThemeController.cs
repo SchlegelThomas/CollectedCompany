@@ -7,7 +7,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class ThemeController : AdminBaseController
+    public partial class ThemeController : AdminBaseController
     {
 
         public ThemeController(IAdminPortalResources adminPortalResources)
@@ -18,12 +18,12 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
 
 
         // GET: AdminPortal/Theme
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
 
-        public PartialViewResult ColorPallete(string hexValue)
+        public virtual PartialViewResult ColorPallete(string hexValue)
         {
             var toUpdate = AdminPortalResources.ApplicationResources.HtmlColors.FirstOrDefault(x => x.CssSelector == "UserTest");
             toUpdate.Value = hexValue;

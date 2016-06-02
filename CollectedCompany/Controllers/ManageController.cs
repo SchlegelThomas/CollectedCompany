@@ -7,24 +7,17 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CollectedCompany.Models;
+using CollectedCompany.ServiceLayer.Integrations.Site.Bindings;
 
 namespace CollectedCompany.Controllers
 {
     [Authorize]
-    public class ManageController : Controller
+    public class ManageController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public ManageController()
-        {
-        }
-
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
+        public ManageController(IWebsiteResources websiteResources) : base(websiteResources) { }
 
         public ApplicationSignInManager SignInManager
         {

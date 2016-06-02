@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -11,8 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CollectedCompany.Models;
-using CollectedCompany.Models.Application;
-using Microsoft.AspNet.Identity.EntityFramework;
+using CollectedCompany.ServiceLayer.Integrations.Site.Bindings;
 
 namespace CollectedCompany.Controllers
 {
@@ -21,14 +19,9 @@ namespace CollectedCompany.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private readonly ApplicationDbContext _dbContext;
 
-        public AccountController(ApplicationDbContext dbContext)
-        {
-            this._dbContext = dbContext;
-        }
-
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(IWebsiteResources websiteResources, ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+            : base(websiteResources)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -191,7 +184,7 @@ namespace CollectedCompany.Controllers
         public ActionResult Profile()
         {
             var userName = User.Identity.GetUserName();
-            ApplicationUser user = _dbContext.Users.FirstOrDefault(x => x.UserName == userName);
+            ApplicationUser user = WebsiteResources.ApplicationResources.Users.FirstOrDefault(x => x.UserName == userName);
             return View(Mapper.Map<ApplicationUser, ProfileViewModel>(user));
         }
 

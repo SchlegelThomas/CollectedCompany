@@ -3,7 +3,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public class AdminSettingsController : AdminBaseController
+    public partial class AdminSettingsController : AdminBaseController
     {
         public AdminSettingsController(IAdminPortalResources adminPortalResources)
             : base(adminPortalResources)
@@ -11,42 +11,42 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             
         }
 
-        public ActionResult General()
+        public virtual ActionResult General()
         {
             return View();
         }
 
-        public ActionResult Payments()
+        public virtual ActionResult Payments()
         {
             return View();
         }
 
-        public ActionResult Checkout()
+        public virtual ActionResult Checkout()
         {
             return View();
         }
 
-        public ActionResult Shipping()
+        public virtual ActionResult Shipping()
         {
             return View();
         }
 
-        public ActionResult Taxes()
+        public virtual ActionResult Taxes()
         {
             return View();
         }
 
-        public ActionResult Notifications()
+        public virtual ActionResult Notifications()
         {
             return View();
         }
 
-        public ActionResult Files()
+        public virtual ActionResult Files()
         {
             return View();
         }
 
-        public ActionResult Account()
+        public virtual ActionResult Account()
         {
             return View();
         }
