@@ -1,4 +1,7 @@
-﻿
+﻿//This Whole thing can be fleshed out much more.
+
+
+
 @theme-base-color:getCustomColor(UserThemePrimaryColor);
 @theme-base-secondary-color:getCustomColor(UserThemeSecondaryColor);
 @theme-base-tertiary-color:getCustomColor(UserThemeTertiaryColor);
@@ -36,6 +39,31 @@
   .color-palette(@color, @swatches, @step, (@index + 1));
 }
 
+.color-palette-primary(@color, @swatches, @step, @index: 0) when (@index =< (@swatches - 1)) {
+
+  .cgrid-primary-@{index} {
+    background-color: spin(@color, (@index * @step));
+  }
+  .color-palette-primary(@color, @swatches, @step, (@index + 1));
+}
+
+.color-palette-secondary(@color, @swatches, @step, @index: 0) when (@index =< (@swatches - 1)) {
+
+  .cgrid-secondary-@{index} {
+    background-color: spin(@color, (@index * @step));
+  }
+  .color-palette-secondary(@color, @swatches, @step, (@index + 1));
+}
+
+.color-palette-tertiary(@color, @swatches, @step, @index: 0) when (@index =< (@swatches - 1)) {
+
+  .cgrid-tertiary-@{index} {
+    background-color: spin(@color, (@index * @step));
+  }
+  .color-palette-tertiary(@color, @swatches, @step, (@index + 1));
+}
+
+
 .color-palette1(@swatches, @color, @index: 0) when (@index =< (@swatches - 1)) {
   
     .shades-@{index} {
@@ -49,5 +77,48 @@
   
   .color-palette1(@swatches, @color, (@index + 1));
 }
+
+.color-palette1-primary(@swatches, @color, @index: 0) when (@index =< (@swatches - 1)) {
+  
+    .shades-primary-@{index} {
+      background-color: lighten(@color, (@index * 10%));
+    }
+  
+  
+    .tints-primary-@{index} {
+      background-color: darken(@color, (@index * 10%));
+    }
+  
+  .color-palette1-primary(@swatches, @color, (@index + 1));
+}
+
+.color-palette1-secondary(@swatches, @color, @index: 0) when (@index =< (@swatches - 1)) {
+  
+    .shades-secondary-@{index} {
+      background-color: lighten(@color, (@index * 10%));
+    }
+  
+  
+    .tints-secondary-@{index} {
+      background-color: darken(@color, (@index * 10%));
+    }
+  
+  .color-palette1-secondary(@swatches, @color, (@index + 1));
+}
+
+.color-palette1-tertiary(@swatches, @color, @index: 0) when (@index =< (@swatches - 1)) {
+  
+    .shades-tertiary-@{index} {
+      background-color: lighten(@color, (@index * 10%));
+    }
+  
+  
+    .tints-tertiary-@{index} {
+      background-color: darken(@color, (@index * 10%));
+    }
+  
+  .color-palette1-tertiary(@swatches, @color, (@index + 1));
+}
+
 
 

@@ -6,7 +6,7 @@ using Nager.AmazonProductAdvertising.Model;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public partial class AmazonController : AdminBaseController
+    public class AmazonController : AdminBaseController
     {
         private readonly IAmazonProductAdvertisingService _amazonService;
 

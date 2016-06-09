@@ -1,5 +1,6 @@
 ﻿body {
   background-color: #f8f8f8;
+  padding: 0;
 }
 #wrapper {
   width: 100%;
@@ -338,7 +339,6 @@ h3 {
 }
 #FocusSection {
   min-height: 780px;
-  max-height: 780px;
   padding: 20px;
   background-color: #e8edf3;
 }
@@ -346,6 +346,16 @@ h3 {
   overflow-y: auto;
   height: 100%;
   padding-top: 10px;
+}
+.save-btn {
+  margin: 10px auto;
+  float: none;
+  display: table;
+  padding: 10px;
+  box-shadow: 4px 4px 5px #000000;
+}
+.save-btn:active {
+  box-shadow: none;
 }
 .price {
   color: #aa3939;
@@ -500,6 +510,10 @@ table.dataTable thead .sorting_desc_disabled {
   display: block;
   float: none;
 }
+.search-card:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  opacity: 1 !important;
+}
 .search-card.category {
   height: 120px;
   margin: 10px 0;
@@ -515,6 +529,11 @@ table.dataTable thead .sorting_desc_disabled {
 }
 .category-container .btn-group .add-all-category {
   position: absolute;
+  border-radius: 20px;
+  box-shadow: 0 3px 3px black;
+}
+.category-container .btn-group .add-all-category:hover {
+  box-shadow: none;
 }
 .category-container .dropdown-menu {
   position: absolute;
@@ -568,31 +587,6 @@ table.dataTable thead .sorting_desc_disabled {
   padding-bottom: 10px;
   border: 1px solid #ddd;
   background-color: #eee !important;
-}
-.search-card.ng-leave {
-  opacity: 0.2;
-  -moz-transition: all ease 250ms;
-  -o-transition: all ease 250ms;
-  -webkit-transition: all ease 250ms;
-  transition: all ease 250ms;
-}
-.search-card.ng-leave-stagger {
-  -webkit-transition-delay: 0.1s;
-  -moz-transition-delay: 0.1s;
-  -o-transition-delay: 0.1s;
-  transition-delay: 0.1s;
-  /*
-                FROM THE DOCUMENTATION:
-                In case the stagger doesn't work then these two values must be set
-                to 0 to avoid an accidental CSS inheritance.
-            */
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
-  -webkit-transition-duration: 0s;
-  transition-duration: 0s;
-}
-.search-card.ng-leave-active {
-  opacity: 1.0;
 }
 .show-grid {
   margin: 15px 0;
@@ -666,5 +660,149 @@ table.dataTable thead .sorting_desc_disabled {
   border: none;
   border-bottom: 1px dashed #d46a6a;
   background-color: transparent;
+}
+.margin-top-20 {
+  margin-top: 20px;
+}
+@media screen and (max-width: 479px) {
+  .nav-tabs-responsive > li {
+    display: none;
+    width: 23%;
+  }
+  .nav-tabs-responsive > li > a {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    width: 100%;
+    text-align: center;
+    vertical-align: top;
+  }
+  .nav-tabs-responsive > li.active {
+    width: 54%;
+  }
+  .nav-tabs-responsive > li.active:first-child {
+    margin-left: 23%;
+  }
+  .nav-tabs-responsive > li.active,
+  .nav-tabs-responsive > li.prev,
+  .nav-tabs-responsive > li.next {
+    display: block;
+  }
+  .nav-tabs-responsive > li.prev,
+  .nav-tabs-responsive > li.next {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  .nav-tabs-responsive > li.next > a,
+  .nav-tabs-responsive > li.prev > a {
+    -webkit-transition: none;
+    transition: none;
+  }
+  .nav-tabs-responsive > li.next > a .text,
+  .nav-tabs-responsive > li.prev > a .text {
+    display: none;
+  }
+  .nav-tabs-responsive > li.next > a:after,
+  .nav-tabs-responsive > li.next > a:after,
+  .nav-tabs-responsive > li.prev > a:after,
+  .nav-tabs-responsive > li.prev > a:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .nav-tabs-responsive > li.prev > a:after {
+    content: "\e079";
+  }
+  .nav-tabs-responsive > li.next > a:after {
+    content: "\e080";
+  }
+  .nav-tabs-responsive > li.dropdown > a > .caret {
+    display: none;
+  }
+  .nav-tabs-responsive > li.dropdown > a:after {
+    content: "\e114";
+  }
+  .nav-tabs-responsive > li.dropdown.active > a:after {
+    display: none;
+  }
+  .nav-tabs-responsive > li.dropdown.active > a > .caret {
+    display: inline-block;
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-left {
+    left: 0;
+    right: auto;
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-center {
+    right: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .nav-tabs-responsive > li.dropdown .dropdown-menu.pull-xs-right {
+    left: auto;
+    right: 0;
+  }
+}
+/**
+ * Demo Styles
+ */
+.wrapper {
+  padding: 15px 0;
+}
+.bs-example-tabs .nav-tabs {
+  margin-bottom: 15px;
+}
+@media (max-width: 479px) {
+  #narrow-browser-alert {
+    display: none;
+  }
+}
+.table {
+  font-size: 2em;
+}
+.table thead {
+  text-align: center;
+}
+.table tbody tr td {
+  vertical-align: middle;
+}
+.table .permission-button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+  display: table;
+  font-size: 2em;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.table .permission-button.check:after {
+  font-family: FontAwesome;
+  content: "\f00c";
+  color: #5cb85c;
+  position: relative;
+  bottom: 5px;
+  left: -5px;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.vex.vex-theme-default .vex-content.vex-custom-content {
+  font-size: 2em;
 }
 /*# sourceMappingURL=Admin.css.map */

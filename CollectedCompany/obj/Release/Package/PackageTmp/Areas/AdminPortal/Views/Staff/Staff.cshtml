@@ -1,0 +1,60 @@
+﻿@using CollectedCompany.Extensions
+@model List<CollectedCompany.ServiceLayer.Integrations.Site.Models.Permissions>
+<section id="Staff">
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>
+                        Staff
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-12 card" id="FocusSection">
+                <table style="width: 100%;" id="StaffTable" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Update Inventory</td>
+                        <td>Manage Prices</td>
+                        <td>Website Design</td>
+                        <td>Sales</td>
+                        <td>Analytics</td>
+                        <td>Place Orders</td>
+                        <td>Manage Catalog</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var staffMember in Model)
+                    {
+
+                        <tr data-id="@staffMember.User.Id" class="staff-link">
+                            <td>
+                                @staffMember.User.FirstName @staffMember.User.LastName
+                            </td>
+                            @foreach (var staffRole in staffMember.StaffRoles)
+                            {
+                                var check = staffRole.IsInRole ? "check" : "empty";
+                                <td>
+                                    <button class="btn permission-button @check"></button>
+                                </td>
+                            }
+                            <td>
+                                <a class="bright edit-listing" data-id="@staffMember.User.Id"><span class="fa fa-2x fa-edit"></span></a> |
+                                <a class="delete-listing bright" data-id="@staffMember.User.Id"><span class="fa fa-2x fa-trash-o"></span></a>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+                <button class="btn btn-primary add-btn" id="NewStaff">New Staff</button>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+
+    @Html.IncludeVersionedJs("/Areas/AdminPortal/Scripts/Admin/Staff/staff.js")
+
+}

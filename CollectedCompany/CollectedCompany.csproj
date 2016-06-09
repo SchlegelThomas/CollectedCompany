@@ -109,10 +109,18 @@
       <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StatesHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AndyWorksStatesHelper.1.0\lib\net45\StatesHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Spatial, Version=5.6.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -126,6 +134,14 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -242,17 +258,21 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\AdminPortal\AdminPortalAreaRegistration.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\AdminBaseController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\IntegrationsController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ProductCatalogController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ProductController.cs" />
+    <Compile Include="Areas\AdminPortal\Controllers\StaffController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ThemeController.cs" />
+    <Compile Include="Areas\AdminPortal\ViewModels\ThemeDashboardViewModel.cs" />
     <Compile Include="Attributes\AuthorizeRoles.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\AdminController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\AdminSettingsController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\AmazonController.cs" />
+    <Compile Include="Controllers\Api\CityStateController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -278,6 +298,10 @@
     <Compile Include="Migrations\Application\201605300054374_Settings.Designer.cs">
       <DependentUpon>201605300054374_Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Application\201606062128288_Settings1.cs" />
+    <Compile Include="Migrations\Application\201606062128288_Settings1.Designer.cs">
+      <DependentUpon>201606062128288_Settings1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Application\Configuration.cs" />
     <Compile Include="Migrations\Shared\201605250039134_Init.cs" />
     <Compile Include="Migrations\Shared\201605250039134_Init.Designer.cs">
@@ -301,6 +325,7 @@
     </Compile>
     <Compile Include="Migrations\Shared\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Api\CityStateZip.cs" />
     <Compile Include="Models\Application\Article.cs" />
     <Compile Include="Models\Application\Settings.cs" />
     <Compile Include="Models\Application\Staff.cs" />
@@ -317,20 +342,29 @@
     <Compile Include="Models\Shared\DbContext.cs" />
     <Compile Include="Models\Application\StoreFront.cs" />
     <Compile Include="Models\Application\Team.cs" />
+    <Compile Include="Models\UserRoles.cs" />
     <Compile Include="Plugins\CustomViewEngine.cs" />
     <Compile Include="Plugins\GetCustomColor.cs" />
     <Compile Include="Plugins\GetCustomFontSize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Constants\ApplicationVariables.cs" />
     <Compile Include="ServiceLayer\Integrations\AdminPortal\Bindings\IAdminPortalResources.cs" />
     <Compile Include="ServiceLayer\Integrations\AdminPortal\Impl\AdminPortalResources.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Bindings\IAmazonProductAdvertising.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Impl\AmazonProductAdvertisingService.cs" />
+    <Compile Include="ServiceLayer\Integrations\CityState\Bindings\ICityStateApiService.cs" />
+    <Compile Include="ServiceLayer\Integrations\CityState\Impl\CityStateApiService.cs" />
+    <Compile Include="ServiceLayer\Integrations\Site\Bindings\IUserManagement.cs" />
     <Compile Include="ServiceLayer\Integrations\Site\Bindings\IWebsiteResources.cs" />
+    <Compile Include="ServiceLayer\Integrations\Site\Impl\UserManagement.cs" />
     <Compile Include="ServiceLayer\Integrations\Site\Impl\WebsiteResources.cs" />
+    <Compile Include="ServiceLayer\Integrations\Site\Models\Permissions.cs" />
     <Compile Include="Services\MtgJsonCardConverter.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\AdminPortal\Scripts\Admin\settings.js" />
+    <Content Include="Areas\AdminPortal\Scripts\Admin\Staff\staff.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\app.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\config.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Controllers\categoryController.js" />
@@ -342,6 +376,7 @@
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Controllers\subCategoryListController.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Controllers\tagController.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Controllers\tagsListController.js" />
+    <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Directives\dimParentHover.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Directives\searchFilter.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Services\dataService.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Views\Category.html" />
@@ -395,6 +430,17 @@
       <DependentUpon>Timeline.css</DependentUpon>
     </Content>
     <Content Include="Content\animate.css" />
+    <Content Include="Content\CustomAnimations.css">
+      <DependentUpon>CustomAnimations.less</DependentUpon>
+    </Content>
+    <Content Include="Content\CustomAnimations.min.css">
+      <DependentUpon>CustomAnimations.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Images\45-degree-fabric-dark.png" />
+    <Content Include="Content\Images\black-linen-2.png" />
+    <Content Include="Content\Images\carbon-fibre.png" />
+    <Content Include="Scripts\Helpers\ajax.js" />
+    <Content Include="App_DataStates.xml" />
     <Content Include="Themes\MarketPlace\assets\css\color\Pallette.css">
       <DependentUpon>Pallette.less</DependentUpon>
     </Content>
@@ -621,6 +667,21 @@
       <DependentUpon>ColorPallete.css</DependentUpon>
     </Content>
     <Content Include="Areas\AdminPortal\Views\Theme\_ColorPallete.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\Colors.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\Template.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_Preview.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPallettePrimary.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalletteSecondary.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalletteTertiary.cshtml" />
+    <Content Include="Content\Master\ColorPallettePrimary.less" />
+    <Content Include="Content\Master\ColorPalletteSecondary.less" />
+    <Content Include="Content\Master\ColorPalletteTertiary.less" />
+    <Content Include="Content\CustomAnimations.less" />
+    <Content Include="Content\CustomAnimations.css.map">
+      <DependentUpon>CustomAnimations.css</DependentUpon>
+    </Content>
+    <Content Include="Areas\AdminPortal\Views\Staff\Staff.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Staff\_StaffList.cshtml" />
     <None Include="Properties\PublishProfiles\JasonCityGames - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\JasonCityGames - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MusicCityGames - FTP.pubxml" />
@@ -853,7 +914,7 @@
     <Content Include="Areas\AdminPortal\Views\AdminSettings\Checkout.cshtml" />
     <Content Include="Areas\AdminPortal\Views\AdminSettings\Shipping.cshtml" />
     <Content Include="Areas\AdminPortal\Views\AdminSettings\Taxes.cshtml" />
-    <Content Include="Areas\AdminPortal\Views\AdminSettings\Notifications.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\AdminSettings\Staff.cshtml" />
     <Content Include="Areas\AdminPortal\Views\AdminSettings\Files.cshtml" />
     <Content Include="Areas\AdminPortal\Views\AdminSettings\Account.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Admin\Reports.cshtml" />
@@ -934,6 +995,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Application\201605300054374_Settings.resx">
       <DependentUpon>201605300054374_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Application\201606062128288_Settings1.resx">
+      <DependentUpon>201606062128288_Settings1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Shared\201605250039134_Init.resx">
       <DependentUpon>201605250039134_Init.cs</DependentUpon>

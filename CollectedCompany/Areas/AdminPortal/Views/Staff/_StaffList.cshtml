@@ -1,0 +1,37 @@
+﻿@model List<CollectedCompany.ServiceLayer.Integrations.Site.Models.Permissions>
+<table style="width: 100%;" id="StaffTable">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Update Inventory</td>
+            <td>Manage Prices</td>
+            <td>Website Design</td>
+            <td>Sales</td>
+            <td>Analytics</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var staffMember in Model)
+        {
+
+            <tr data-id="@staffMember.User.Id" class="staff-link">
+                <td>
+                    @staffMember.User.FirstName @staffMember.User.LastName
+                </td>
+                @foreach (var staffRole in staffMember.StaffRoles)
+                {
+                    var check = staffRole.IsInRole ? "check" : "empty";
+                    <td>
+                        <button class="btn permission-button @check"></button>
+                    </td>
+                }
+                <td>
+                    <a class="bright edit-listing" data-id="@staffMember.User.Id"><span class="glyphicon glyphicon-edit"></span></a> |
+                    <a class="delete-listing bright" data-id="@staffMember.User.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary add-btn" id="NewStaff">New Staff</button>

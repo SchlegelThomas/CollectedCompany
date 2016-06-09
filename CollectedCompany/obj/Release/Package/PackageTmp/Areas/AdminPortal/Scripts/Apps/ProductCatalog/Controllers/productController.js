@@ -16,9 +16,11 @@
 
 
         function activate() {
+            $('#FocusSection').removeClass('dim');
             return getProduct(vm.lookupId).then(function () {
 
             });
+            
         };
 
 

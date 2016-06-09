@@ -6,7 +6,7 @@ using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public partial class ProductCatalogController : AdminBaseController
+    public class ProductCatalogController : AdminBaseController
     {
         public ProductCatalogController(IAdminPortalResources adminResources)
             : base(adminResources)

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using CollectedCompany.Areas.AdminPortal.ViewModels;
 using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public partial class ThemeController : AdminBaseController
+    public class ThemeController : AdminBaseController
     {
 
         public ThemeController(IAdminPortalResources adminPortalResources)
@@ -17,10 +15,27 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
         }
 
 
-        // GET: AdminPortal/Theme
-        public virtual ActionResult Index()
+        public ActionResult Index()
+        {
+            var model = AdminPortalResources.ApplicationResources.HtmlTemplates.FirstOrDefault(x => x.IsActive);
+
+
+            return View(model);
+        }
+
+        public ActionResult Template()
         {
             return View();
+        }
+
+        public ActionResult Colors()
+        {
+            return View();
+        }
+
+        public PartialViewResult Preview()
+        {
+            return PartialView("_Preview");
         }
 
         public virtual PartialViewResult ColorPallete(string hexValue)
@@ -29,6 +44,21 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             toUpdate.Value = hexValue;
             AdminPortalResources.ApplicationResources.SaveChanges();
             return PartialView("_ColorPallete");
+        }
+
+        public virtual PartialViewResult ColorPallettePrimary()
+        {
+            return PartialView("_ColorPallettePrimary");
+        }
+
+        public virtual PartialViewResult ColorPalleteSecondary()
+        {
+            return PartialView("_ColorPalletteSecondary");
+        }
+
+        public virtual PartialViewResult ColorPalleteTertiary()
+        {
+            return PartialView("_ColorPalletteTertiary");
         }
     }
 }

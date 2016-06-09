@@ -13,6 +13,12 @@
         vm.toggleClassicSearch = function() {
             vm.classicSearch = !vm.classicSearch;
         };
+        vm.hoverDim = function () {
+            $('#FocusSection').addClass('dim');
+        };
+        vm.hoverOut = function () {
+            $('#FocusSection').removeClass('dim');
+        }
 
 
         function getProducts() {

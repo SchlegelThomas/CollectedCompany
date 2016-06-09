@@ -1,4 +1,41 @@
-﻿
+﻿jQuery.showConfirmModal = function (textForModal, callback) {
+    vex.dialog.confirm({
+        message: textForModal,
+        className: 'vex-theme-default',
+        contentClassName: 'vex-custom-content',
+        callback: callback
+    });
+};
+
+jQuery.showDialogModal = function (messageForDialog, inputHtml, buttons, callback) {
+    vex.dialog.open({
+        message: messageForDialog,
+        input: inputHtml,
+        className: 'vex-theme-default',
+        contentClassName: 'vex-custom-content vex-custom-form',
+        buttons: buttons,
+        callback: callback
+    });
+};
+
+jQuery.showPromptModal = function (messageForPrompt, placeHolderText, callback) {
+    vex.dialog.prompt({
+        message: messageForPrompt,
+        className: 'vex-theme-default',
+        contentClassName: 'vex-custom-content',
+        placeholder: placeHolderText,
+        callback: callback
+    });
+};
+
+jQuery.showAlertModal = function (messageForPrompt, callback) {
+    vex.dialog.alert({
+        message: messageForPrompt,
+        className: 'vex-theme-default',
+        contentClassName: 'vex-custom-content',
+        callback: callback
+    });
+};
 
 $(function () {
     $(window).bind("load resize", function () {

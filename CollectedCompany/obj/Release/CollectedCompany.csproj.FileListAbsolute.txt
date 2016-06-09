@@ -131,3 +131,11 @@ C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\Collected
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\Ninject.Extensions.Conventions.xml
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\Ninject.Web.Common.xml
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\Ninject.Web.Mvc.xml
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\StatesHelper.dll
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Net.Http.Formatting.dll
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.dll
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.WebHost.dll
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Net.Http.Formatting.xml
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.xml
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.WebHost.xml
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Application.Settings1.resources

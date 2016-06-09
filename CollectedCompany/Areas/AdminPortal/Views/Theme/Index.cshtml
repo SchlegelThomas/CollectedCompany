@@ -1,43 +1,125 @@
-﻿<section id="Theme" class="col-lg-12">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1>Theme</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="col-lg-6">
-                <input type="text" placeholder="Click me to get started" readonly="readonly" class="form-control input-lg" id="ColorTest"/>
+﻿@model CollectedCompany.Models.Shared.HtmlTemplate
+
+<div class="col-lg-12">
+    <section class="dashboard">
+        <div class="row">
+            <div class="col-lg-12">
+                <section id="Themes" class="col-lg-10 center-div">
+                    <div class="col-lg-12">
+                        <h1>
+                            Theme
+                        </h1>
+                        <div class="col-lg-12">
+                            @if (Model != null)
+                            {
+                                <p>someway to show theme</p>
+                            }
+                            else
+                            {
+                                <img src="https://yellowpencil.com/assets/blog/foundation/bootstrap/9.png" width="500" />
+                            }
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        @Html.ActionLink("Change Theme", "Template", "Theme", new { }, new { @class = "btn btn-primary" });
+                    </div>
+                </section>
             </div>
-            <div class="col-lg-6">
-                <button id="Go" class="btn btn-lg btn-primary">Generate Color Scheme</button>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <section id="Colors" class="col-lg-10 center-div">
+                    <div class="col-lg-12">
+                        <h1>
+                            Colors
+                        </h1>
+                        <div class="col-lg-12">
+                            @if (Model != null && Model.Colors.Count > 1)
+                            {
+
+                                <div class="container">
+                                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                                            <li role="presentation" class="active">
+                                                <a href="#Primary" role="tab" id="primary-tab" data-toggle="tab" aria-controls="samsa">
+                                                    <span class="text">Primary Color Pallete</span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation" class="next">
+                                                <a href="#Secondary" role="tab" id="secondary-tab" data-toggle="tab" aria-controls="samsa">
+                                                    <span class="text">Secondary Color Pallete</span>
+                                                </a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a href="#Tertiary" role="tab" id="tertiary-tab" data-toggle="tab" aria-controls="samsa">
+                                                    <span class="text">Tertiary Color Pallete</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="Primary" aria-labelledby="primary-tab">
+                                                @{Html.RenderAction("ColorPallettePrimary", "Theme");}
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="Secondary" aria-labelledby="secondary-tab">
+                                                @{Html.RenderAction("ColorPalleteSecondary", "Theme");}
+                                            </div>
+
+                                            <div role="tabpanel" class="tab-pane fade" id="Tertiary" aria-labelledby="tertiary-tab">
+                                                @{Html.RenderAction("ColorPalleteTertiary", "Theme");}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Choose Colors", "Colors", "Theme", new { }, new { @class = "btn btn-primary" });
+                            }
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        @Html.ActionLink("Change Colors", "Colors", "Theme", new { }, new { @class = "btn btn-primary" });
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div id="ColorResult" class="row">
-
-
-
+        <div class="row">
+            <div class="col-lg-12">
+                <section id="Fonts" class="col-lg-10 center-div"></section>
             </div>
         </div>
-    </div>
-</section>
+        <div class="row">
+            <div class="col-lg-12">
+                <section id="Images" class="col-lg-10 center-div"></section>
+            </div>
+        </div>
+    </section>
+</div>
 
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(document).on('click', '#Go', function() {
-            var color = $('#ColorTest').val();
+@section Scripts{
+    <script type="text/javascript">
+        $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function (e) {
+            var $target = $(e.target);
+            var $tabs = $target.closest('.nav-tabs-responsive');
+            var $current = $target.closest('li');
+            var $parent = $current.closest('li.dropdown');
+            $current = $parent.length > 0 ? $parent : $current;
+            var $next = $current.next();
+            var $prev = $current.prev();
+            var updateDropdownMenu = function ($el, position) {
+                $el
+                    .find('.dropdown-menu')
+                    .removeClass('pull-xs-left pull-xs-center pull-xs-right')
+                    .addClass('pull-xs-' + position);
+            };
 
-            $('#ColorResult').load('/AdminPortal/Theme/ColorPallete?hexValue=' + encodeURIComponent(color), function() {
+            $tabs.find('>li').removeClass('next prev');
+            $prev.addClass('prev');
+            $next.addClass('next');
 
-            });
+            updateDropdownMenu($prev, 'left');
+            updateDropdownMenu($current, 'center');
+            updateDropdownMenu($next, 'right');
         });
-
-        var picker = $('#ColorTest').colorPicker();
-
-        
-
-    });
-</script>
+    </script>
+}

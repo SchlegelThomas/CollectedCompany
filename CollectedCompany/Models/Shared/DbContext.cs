@@ -13,7 +13,7 @@ namespace CollectedCompany.Models.Shared
         public DbSet<HtmlFontSizeVariable> HtmlFonts { get; set; }
         public DbSet<HtmlImageVariable> HtmlImages { get; set; }
 
-
+        public DbSet<IdentityUserRole> UserRoles { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<Product> Products { get; set; }

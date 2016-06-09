@@ -13,7 +13,8 @@ namespace CollectedCompany.Models.Application
         public DbSet<TeamEntry> Entries { get; set; }
         public DbSet<Card> Cards { get; set; }
         public DbSet<Set> Sets { get; set; }
-        
+        public DbSet<IdentityUserRole> UserRoles { get; set; }
+
         public DbSet<AmazonIntegration> AmazonIntegrations { get; set; }
         public DbSet<EbayIntegration> EbayIntegrations { get; set; }
         public DbSet<FacebookIntegration> FacebookIntegrations { get; set; }
@@ -36,6 +37,7 @@ namespace CollectedCompany.Models.Application
         public DbSet<ProductTag> ProductTags { get; set; }
         public DbSet<ProductVendor> ProductVendors { get; set; }
         public DbSet<Staff> StaffMembers { get; set; }
+        public DbSet<Settings> Settings { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

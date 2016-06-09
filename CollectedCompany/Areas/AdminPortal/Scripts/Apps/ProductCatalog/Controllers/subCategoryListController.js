@@ -5,7 +5,12 @@
         var vm = this;
         vm._subcategories = [];
         vm.search = { $: $stateParams.queryString };
-
+        vm.hoverDim = function () {
+            $('#FocusSection').addClass('dim');
+        };
+        vm.hoverOut = function () {
+            $('#FocusSection').removeClass('dim');
+        }
 
         function getSubCategories() {
             return dataService.getSubCategories()

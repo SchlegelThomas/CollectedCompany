@@ -1,9 +1,11 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using CollectedCompany.Models.Application;
 using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
 
 namespace CollectedCompany.Areas.AdminPortal.Controllers
 {
-    public partial class AdminSettingsController : AdminBaseController
+    public class AdminSettingsController : AdminBaseController
     {
         public AdminSettingsController(IAdminPortalResources adminPortalResources)
             : base(adminPortalResources)
@@ -13,7 +15,9 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
 
         public virtual ActionResult General()
         {
-            return View();
+            Settings settings = AdminPortalResources.ApplicationResources.Settings.FirstOrDefault() ?? new Settings();
+
+            return View(settings);
         }
 
         public virtual ActionResult Payments()
@@ -32,11 +36,6 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
         }
 
         public virtual ActionResult Taxes()
-        {
-            return View();
-        }
-
-        public virtual ActionResult Notifications()
         {
             return View();
         }
