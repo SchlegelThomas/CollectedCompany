@@ -68,7 +68,9 @@ $(function () {
 
         });
 
-        
+        $(document).on('click', '.nav-link', function(e) {
+            e.stopPropagation();
+        });
 
 
     });
