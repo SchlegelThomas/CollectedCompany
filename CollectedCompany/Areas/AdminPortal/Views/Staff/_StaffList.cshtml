@@ -23,7 +23,7 @@
                 {
                     var check = staffRole.IsInRole ? "check" : "empty";
                     <td>
-                        <button class="btn permission-button @check"></button>
+                        <button class="btn permission-button @check" data-role="@staffRole.UserRole.ToString()" data-id="@staffMember.User.Id"></button>
                     </td>
                 }
                 <td>

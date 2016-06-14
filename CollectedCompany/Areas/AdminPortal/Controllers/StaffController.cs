@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Linq;
@@ -33,10 +34,11 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             return View(permissions);
         }
 
-        public PartialViewResult EditStaff(int staffId)
+        public JsonResult EditStaff(string id)
         {
+            var staff = AdminPortalResources.ApplicationResources.StaffMembers.FirstOrDefault(x => x.UserAccount.Id == id);
 
-            return PartialView();
+            return staff != null ? JsonGetResponse(new { Success = true, Data = staff }) : JsonGetResponse(new { Success = false });
         }
 
         public PartialViewResult StaffList()
@@ -53,6 +55,7 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             return PartialView("_StaffList", permissions);
         }
 
+        [HttpPost]
         public JsonResult AddStaff(string firstName, string lastName, string email, string tempPassword)
         {
             var user = new ApplicationUser
@@ -65,26 +68,84 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             };
 
             var result = UserManager.Create(user, tempPassword);
-            if (result.Succeeded)
-            {
-                UserManager.AddToRole(user.Id, UserRoles.Staff.ToString());
-                var newUser = AdminPortalResources.ApplicationResources.Users.FirstOrDefault(x => x.Email == email);
-                AdminPortalResources.ApplicationResources.StaffMembers.Add(new Staff
-                {
-                    UserAccount = newUser
-                });
 
+            if (!result.Succeeded)
+                return Json(new { Success = false, Errors = result.Errors }, JsonRequestBehavior.AllowGet);
+
+            UserManager.AddToRole(user.Id, UserRoles.Staff.ToString());
+            var newUser = AdminPortalResources.ApplicationResources.Users.FirstOrDefault(x => x.Email == email);
+            AdminPortalResources.ApplicationResources.StaffMembers.Add(new Staff
+            {
+                UserAccount = newUser
+            });
+
+            AdminPortalResources.ApplicationResources.SaveChanges();
+            // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
+            // Send an email with this link
+            // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+            // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+            // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+            return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult SaveStaff(string firstName, string lastName, string email, string userId)
+        {
+            var staff = AdminPortalResources.ApplicationResources.StaffMembers.FirstOrDefault(x => x.UserAccount.Id == userId);
+
+            if (staff != null)
+            {
+                staff.UserAccount.FirstName = firstName;
+                staff.UserAccount.LastName = lastName;
+                staff.UserAccount.Email = email;
+                AdminPortalResources.ApplicationResources.Entry(staff).State = EntityState.Modified;
                 AdminPortalResources.ApplicationResources.SaveChanges();
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                return Json(new { Success = true }, JsonRequestBehavior.AllowGet);
+                return Json(new { Success = true });
             }
 
-            return Json(new { Success = false, Errors = result.Errors }, JsonRequestBehavior.AllowGet);
+            return Json(new { Success = false, Errors = "Could not locate staff" });
+        }
 
+        [HttpPost]
+        public JsonResult DeleteStaff(string userId)
+        {
+            var staff = AdminPortalResources.ApplicationResources.StaffMembers.FirstOrDefault(x => x.UserAccount.Id == userId);
+
+            if (staff != null)
+            {
+                AdminPortalResources.ApplicationResources.StaffMembers.Remove(staff);
+                AdminPortalResources.ApplicationResources.SaveChanges();
+                return Json(new { Success = true });
+            }
+
+            return Json(new { Success = false, Errors = "Could not locate staff" });
+        }
+
+        [HttpPost]
+        public JsonResult UpdateRole(string role, string id, bool active)
+        {
+            var staff = AdminPortalResources.ApplicationResources.StaffMembers.FirstOrDefault(x => x.UserAccount.Id == id);
+
+            if (staff != null)
+            {
+                AdminPortalResources.UserManagementService.UpdateRoles(new Permissions
+                {
+                    User = staff.UserAccount,
+                    StaffRoles = new List<StaffPermission>
+                    {
+                        new StaffPermission
+                        {
+                            IsInRole = active,
+                            UserRole = (StaffRoles) Enum.Parse(typeof(StaffRoles), role, true)
+                        }
+                    },
+                    UserRoles = new List<UserPermission>()
+                });
+
+                return Json(new { Success = true });
+            }
+
+            return Json(new { Success = false });
         }
     }
 }

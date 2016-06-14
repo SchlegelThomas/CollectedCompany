@@ -33,6 +33,8 @@ namespace CollectedCompany.ServiceLayer.Integrations.Site.Impl
             }
 
             UpdateUserRoles(permissions.User, permissions.UserRoles);
+
+            _applicationDbContext.SaveChanges();
         }
 
         public Permissions GetPermission(ApplicationUser user)
@@ -69,7 +71,8 @@ namespace CollectedCompany.ServiceLayer.Integrations.Site.Impl
         {
             foreach (var role in list)
             {
-                var userRole = _applicationDbContext.Roles.FirstOrDefault(x => x.Name == role.ToString());
+                var roleLookup = role.UserRole.ToString();
+                var userRole = _applicationDbContext.Roles.FirstOrDefault(x => x.Name == roleLookup);
                 if (role.IsInRole)
                 {
 
@@ -93,7 +96,8 @@ namespace CollectedCompany.ServiceLayer.Integrations.Site.Impl
 
             foreach (var role in list)
             {
-                var userRole = _applicationDbContext.Roles.FirstOrDefault(x => x.Name == role.ToString());
+                var roleLookup = role.UserRole.ToString();
+                var userRole = _applicationDbContext.Roles.FirstOrDefault(x => x.Name == roleLookup);
                 if (role.IsInRole)
                 {
                     

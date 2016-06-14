@@ -9,5 +9,6 @@ namespace CollectedCompany.ServiceLayer.Integrations.Site.Bindings
         void UpdateRoles(Permissions permissions);
 
         Permissions GetPermission(ApplicationUser user);
+
     }
 }
