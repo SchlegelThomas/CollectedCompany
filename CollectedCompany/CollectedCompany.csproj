@@ -264,6 +264,7 @@
     <Compile Include="Areas\AdminPortal\Controllers\IntegrationsController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ProductCatalogController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ProductController.cs" />
+    <Compile Include="Areas\AdminPortal\Controllers\SecretController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\StaffController.cs" />
     <Compile Include="Areas\AdminPortal\Controllers\ThemeController.cs" />
     <Compile Include="Areas\AdminPortal\ViewModels\ThemeDashboardViewModel.cs" />
@@ -302,6 +303,14 @@
     <Compile Include="Migrations\Application\201606062128288_Settings1.Designer.cs">
       <DependentUpon>201606062128288_Settings1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Application\201606151900237_SettingsUpdate.cs" />
+    <Compile Include="Migrations\Application\201606151900237_SettingsUpdate.Designer.cs">
+      <DependentUpon>201606151900237_SettingsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Application\201606162049359_ImageUrlToTemplates.cs" />
+    <Compile Include="Migrations\Application\201606162049359_ImageUrlToTemplates.Designer.cs">
+      <DependentUpon>201606162049359_ImageUrlToTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Application\Configuration.cs" />
     <Compile Include="Migrations\Shared\201605250039134_Init.cs" />
     <Compile Include="Migrations\Shared\201605250039134_Init.Designer.cs">
@@ -323,6 +332,14 @@
     <Compile Include="Migrations\Shared\201605300054547_Settings.Designer.cs">
       <DependentUpon>201605300054547_Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Shared\201606151900500_SettingsUpdate.cs" />
+    <Compile Include="Migrations\Shared\201606151900500_SettingsUpdate.Designer.cs">
+      <DependentUpon>201606151900500_SettingsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Shared\201606162049469_ImageUrlToTemplates.cs" />
+    <Compile Include="Migrations\Shared\201606162049469_ImageUrlToTemplates.Designer.cs">
+      <DependentUpon>201606162049469_ImageUrlToTemplates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Shared\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Api\CityStateZip.cs" />
@@ -331,6 +348,7 @@
     <Compile Include="Models\Application\Staff.cs" />
     <Compile Include="Models\ClaimKeys.cs" />
     <Compile Include="Models\Application\DbContext.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Shared\HtmlTemplate.cs" />
     <Compile Include="Models\IAutoMapConfig.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -352,6 +370,8 @@
     <Compile Include="ServiceLayer\Integrations\AdminPortal\Impl\AdminPortalResources.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Bindings\IAmazonProductAdvertising.cs" />
     <Compile Include="ServiceLayer\Integrations\Amazon\Impl\AmazonProductAdvertisingService.cs" />
+    <Compile Include="ServiceLayer\Integrations\AzureStorage\Bindings\IAzureStorageService.cs" />
+    <Compile Include="ServiceLayer\Integrations\AzureStorage\Impl\AzureStorageService.cs" />
     <Compile Include="ServiceLayer\Integrations\CityState\Bindings\ICityStateApiService.cs" />
     <Compile Include="ServiceLayer\Integrations\CityState\Impl\CityStateApiService.cs" />
     <Compile Include="ServiceLayer\Integrations\Site\Bindings\IUserManagement.cs" />
@@ -363,8 +383,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\AdminPortal\Scripts\Admin\dashboard.js" />
+    <Content Include="Areas\AdminPortal\Scripts\Admin\Product\dropzone.js" />
+    <Content Include="Areas\AdminPortal\Scripts\Admin\Product\product.js" />
     <Content Include="Areas\AdminPortal\Scripts\Admin\settings.js" />
     <Content Include="Areas\AdminPortal\Scripts\Admin\Staff\staff.js" />
+    <Content Include="Areas\AdminPortal\Scripts\Admin\themeUploader.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\app.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\config.js" />
     <Content Include="Areas\AdminPortal\Scripts\Apps\ProductCatalog\Controllers\categoryController.js" />
@@ -423,6 +447,12 @@
       <DependentUpon>Amazon.css</DependentUpon>
     </Content>
     <Content Include="Content\Admin\dataTables.bootstrap.css" />
+    <Content Include="Content\Admin\Dropzone.css">
+      <DependentUpon>Dropzone.less</DependentUpon>
+    </Content>
+    <Content Include="Content\Admin\Dropzone.min.css">
+      <DependentUpon>Dropzone.css</DependentUpon>
+    </Content>
     <Content Include="Content\Admin\Timeline.css">
       <DependentUpon>Timeline.less</DependentUpon>
     </Content>
@@ -441,6 +471,7 @@
     <Content Include="Content\Images\carbon-fibre.png" />
     <Content Include="Scripts\Helpers\ajax.js" />
     <Content Include="App_DataStates.xml" />
+    <Content Include="Scripts\Helpers\hexColors.js" />
     <Content Include="Themes\MarketPlace\assets\css\color\Pallette.css">
       <DependentUpon>Pallette.less</DependentUpon>
     </Content>
@@ -550,11 +581,11 @@
     <Content Include="Content\Images\sort_both.png" />
     <Content Include="Content\Images\sort_desc.png" />
     <Content Include="Content\Images\sort_desc_disabled.png" />
-    <Content Include="Content\Master\ColorPallete.css">
-      <DependentUpon>ColorPallete.less</DependentUpon>
+    <Content Include="Content\Master\ColorPalette.css">
+      <DependentUpon>ColorPalette.less</DependentUpon>
     </Content>
-    <Content Include="Content\Master\ColorPallete.min.css">
-      <DependentUpon>ColorPallete.css</DependentUpon>
+    <Content Include="Content\Master\ColorPalette.min.css">
+      <DependentUpon>ColorPalette.css</DependentUpon>
     </Content>
     <Content Include="Content\Master\Master.css">
       <DependentUpon>Master.less</DependentUpon>
@@ -662,26 +693,36 @@
     </Content>
     <Content Include="Areas\AdminPortal\Views\Integrations\Dashboard.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Theme\Index.cshtml" />
-    <Content Include="Content\Master\ColorPallete.less" />
-    <Content Include="Content\Master\ColorPallete.css.map">
-      <DependentUpon>ColorPallete.css</DependentUpon>
+    <Content Include="Content\Master\ColorPalette.less" />
+    <Content Include="Content\Master\ColorPalette.css.map">
+      <DependentUpon>ColorPalette.css</DependentUpon>
     </Content>
-    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPallete.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalete.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Theme\Colors.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Theme\Template.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Theme\_Preview.cshtml" />
-    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPallettePrimary.cshtml" />
-    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalletteSecondary.cshtml" />
-    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalletteTertiary.cshtml" />
-    <Content Include="Content\Master\ColorPallettePrimary.less" />
-    <Content Include="Content\Master\ColorPalletteSecondary.less" />
-    <Content Include="Content\Master\ColorPalletteTertiary.less" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPalettePrimary.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPaletteSecondary.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Theme\_ColorPaletteTertiary.cshtml" />
+    <Content Include="Content\Master\ColorPalettePrimary.less" />
+    <Content Include="Content\Master\ColorPaletteSecondary.less" />
+    <Content Include="Content\Master\ColorPaletteTertiary.less" />
     <Content Include="Content\CustomAnimations.less" />
     <Content Include="Content\CustomAnimations.css.map">
       <DependentUpon>CustomAnimations.css</DependentUpon>
     </Content>
     <Content Include="Areas\AdminPortal\Views\Staff\Staff.cshtml" />
     <Content Include="Areas\AdminPortal\Views\Staff\_StaffList.cshtml" />
+    <Content Include="Areas\AdminPortal\Views\Secret\ThemeImageUploader.cshtml" />
+    <Content Include="fonts\TeamSpiritNF.otf" />
+    <Content Include="fonts\TeamSpiritNF.ttf" />
+    <Content Include="fonts\underscr.ttf" />
+    <Content Include="fonts\undrscr2.ttf" />
+    <Content Include="Areas\AdminPortal\Views\Shared\_Storefront.cshtml" />
+    <Content Include="Content\Admin\Dropzone.less" />
+    <Content Include="Content\Admin\Dropzone.css.map">
+      <DependentUpon>Dropzone.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\JasonCityGames - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\JasonCityGames - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\MusicCityGames - FTP.pubxml" />
@@ -975,6 +1016,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminPortal\Views\AdminBase\" />
+    <Folder Include="PackagesBackup\" />
     <Folder Include="Views\Theme\" />
   </ItemGroup>
   <ItemGroup>
@@ -999,6 +1041,12 @@
     <EmbeddedResource Include="Migrations\Application\201606062128288_Settings1.resx">
       <DependentUpon>201606062128288_Settings1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Application\201606151900237_SettingsUpdate.resx">
+      <DependentUpon>201606151900237_SettingsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Application\201606162049359_ImageUrlToTemplates.resx">
+      <DependentUpon>201606162049359_ImageUrlToTemplates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Shared\201605250039134_Init.resx">
       <DependentUpon>201605250039134_Init.cs</DependentUpon>
     </EmbeddedResource>
@@ -1013,6 +1061,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\Shared\201605300054547_Settings.resx">
       <DependentUpon>201605300054547_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Shared\201606151900500_SettingsUpdate.resx">
+      <DependentUpon>201606151900500_SettingsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\Shared\201606162049469_ImageUrlToTemplates.resx">
+      <DependentUpon>201606162049469_ImageUrlToTemplates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

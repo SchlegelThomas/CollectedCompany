@@ -1,27 +1,31 @@
 ﻿@model CollectedCompany.Models.Shared.HtmlTemplate
 
 <div class="col-lg-12">
-    <section class="dashboard">
+    <section class="dashboard" id="FocusSection">
         <div class="row">
             <div class="col-lg-12">
                 <section id="Themes" class="col-lg-10 center-div">
-                    <div class="col-lg-12">
-                        <h1>
-                            Theme
-                        </h1>
+                    <div class="card">
                         <div class="col-lg-12">
-                            @if (Model != null)
-                            {
-                                <p>someway to show theme</p>
-                            }
-                            else
-                            {
-                                <img src="https://yellowpencil.com/assets/blog/foundation/bootstrap/9.png" width="500" />
-                            }
+                            <h1>
+                                Theme
+                            </h1>
+                            <div class="col-lg-12">
+                                @if (Model != null)
+                                {
+                                    <h3 class="align-center">@Model.Name</h3>
+                                    <div class="theme-preview" style="background-image: url('@Model.ImageUrl')"></div>
+                                }
+                                else
+                                {
+                                    <h3>No Active Theme</h3>
+                                    <div class="theme-preview" style="background-image: url('https://yellowpencil.com/assets/blog/foundation/bootstrap/9.png')"></div>
+                                }
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                        @Html.ActionLink("Change Theme", "Template", "Theme", new { }, new { @class = "btn btn-primary" });
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Change Theme", "Template", "Theme", new { }, new { @class = "btn btn-primary", id = "ChangeTheme" });
+                        </div>
                     </div>
                 </section>
             </div>
@@ -29,56 +33,53 @@
         <div class="row">
             <div class="col-lg-12">
                 <section id="Colors" class="col-lg-10 center-div">
-                    <div class="col-lg-12">
-                        <h1>
-                            Colors
-                        </h1>
+                    <div class="card">
                         <div class="col-lg-12">
-                            @if (Model != null && Model.Colors.Count > 1)
-                            {
+                            <h1>
+                                Colors
+                            </h1>
+                            <div class="col-lg-12">
+                                @if (Model != null && Model.Colors.Count > 1)
+                                {
+                                    <div class="container">
+                                        <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+                                            <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
+                                                <li role="presentation" class="active">
+                                                    <a href="#Primary" role="tab" id="primary-tab" data-toggle="tab" aria-controls="samsa" style="border-bottom-color:@Model.Colors.ToList()[0].Value;">
+                                                        <span class="text">Complementary</span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentation" class="next">
+                                                    <a href="#Secondary" role="tab" id="secondary-tab" data-toggle="tab" aria-controls="samsa" style="border-bottom-color:@Model.Colors.ToList()[1].Value;">
+                                                        <span class="text">Analagous</span>
+                                                    </a>
+                                                </li>
+                                                <li role="presentation">
+                                                    <a href="#Tertiary" role="tab" id="tertiary-tab" data-toggle="tab" aria-controls="samsa" style="border-bottom-color:@Model.Colors.ToList()[2].Value;">
+                                                        <span class="text">Triadic</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <div id="myTabContent" class="tab-content">
+                                                <div role="tabpanel" class="tab-pane fade in active" id="Primary" aria-labelledby="primary-tab">
+                                                    @{Html.RenderAction("ColorpalettePrimary", "Theme");}
+                                                </div>
+                                                <div role="tabpanel" class="tab-pane fade" id="Secondary" aria-labelledby="secondary-tab">
+                                                    @{Html.RenderAction("ColorPalleteSecondary", "Theme");}
+                                                </div>
 
-                                <div class="container">
-                                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                                        <ul id="myTab" class="nav nav-tabs nav-tabs-responsive" role="tablist">
-                                            <li role="presentation" class="active">
-                                                <a href="#Primary" role="tab" id="primary-tab" data-toggle="tab" aria-controls="samsa">
-                                                    <span class="text">Primary Color Pallete</span>
-                                                </a>
-                                            </li>
-                                            <li role="presentation" class="next">
-                                                <a href="#Secondary" role="tab" id="secondary-tab" data-toggle="tab" aria-controls="samsa">
-                                                    <span class="text">Secondary Color Pallete</span>
-                                                </a>
-                                            </li>
-                                            <li role="presentation">
-                                                <a href="#Tertiary" role="tab" id="tertiary-tab" data-toggle="tab" aria-controls="samsa">
-                                                    <span class="text">Tertiary Color Pallete</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <div id="myTabContent" class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade in active" id="Primary" aria-labelledby="primary-tab">
-                                                @{Html.RenderAction("ColorPallettePrimary", "Theme");}
-                                            </div>
-                                            <div role="tabpanel" class="tab-pane fade" id="Secondary" aria-labelledby="secondary-tab">
-                                                @{Html.RenderAction("ColorPalleteSecondary", "Theme");}
-                                            </div>
-
-                                            <div role="tabpanel" class="tab-pane fade" id="Tertiary" aria-labelledby="tertiary-tab">
-                                                @{Html.RenderAction("ColorPalleteTertiary", "Theme");}
+                                                <div role="tabpanel" class="tab-pane fade" id="Tertiary" aria-labelledby="tertiary-tab">
+                                                    @{Html.RenderAction("ColorPalleteTertiary", "Theme");}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            }
-                            else
-                            {
-                                @Html.ActionLink("Choose Colors", "Colors", "Theme", new { }, new { @class = "btn btn-primary" });
-                            }
+                                }
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-12">
-                        @Html.ActionLink("Change Colors", "Colors", "Theme", new { }, new { @class = "btn btn-primary" });
+                        <div class="col-lg-12">
+                            @Html.ActionLink("Change Colors", "Colors", "Theme", new { }, new { @class = "btn btn-primary", Id = "ChangeColors" })
+                        </div>
                     </div>
                 </section>
             </div>
@@ -98,7 +99,7 @@
 
 @section Scripts{
     <script type="text/javascript">
-        $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function (e) {
+        $(document).on('show.bs.tab', '.nav-tabs-responsive [data-toggle="tab"]', function(e) {
             var $target = $(e.target);
             var $tabs = $target.closest('.nav-tabs-responsive');
             var $current = $target.closest('li');
@@ -106,7 +107,7 @@
             $current = $parent.length > 0 ? $parent : $current;
             var $next = $current.next();
             var $prev = $current.prev();
-            var updateDropdownMenu = function ($el, position) {
+            var updateDropdownMenu = function($el, position) {
                 $el
                     .find('.dropdown-menu')
                     .removeClass('pull-xs-left pull-xs-center pull-xs-right')
@@ -120,6 +121,27 @@
             updateDropdownMenu($prev, 'left');
             updateDropdownMenu($current, 'center');
             updateDropdownMenu($next, 'right');
+        });
+        $(document).ready(function() {
+
+            $.each($('.cgrid'), function(index, element) {
+                var colorHex = $(element).css("backgroundColor");
+                $(element).append('<span class="color-label">' + colorHex + '</span>');
+
+            });
+
+            $.each($('.shades'), function (index, element) {
+                var colorHex = $(element).css("backgroundColor");
+                $(element).append('<span class="color-label">' + colorHex + '</span>');
+
+            });
+
+            $.each($('.tints'), function (index, element) {
+                var colorHex = $(element).css("backgroundColor");
+                $(element).append('<span class="color-label">' + colorHex + '</span>');
+
+            });
+
         });
     </script>
 }

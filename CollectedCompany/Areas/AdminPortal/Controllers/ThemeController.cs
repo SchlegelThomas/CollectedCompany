@@ -46,19 +46,19 @@ namespace CollectedCompany.Areas.AdminPortal.Controllers
             return PartialView("_ColorPallete");
         }
 
-        public virtual PartialViewResult ColorPallettePrimary()
+        public virtual PartialViewResult ColorpalettePrimary()
         {
-            return PartialView("_ColorPallettePrimary");
+            return PartialView("_ColorpalettePrimary");
         }
 
         public virtual PartialViewResult ColorPalleteSecondary()
         {
-            return PartialView("_ColorPalletteSecondary");
+            return PartialView("_ColorpaletteSecondary");
         }
 
         public virtual PartialViewResult ColorPalleteTertiary()
         {
-            return PartialView("_ColorPalletteTertiary");
+            return PartialView("_ColorpaletteTertiary");
         }
     }
 }

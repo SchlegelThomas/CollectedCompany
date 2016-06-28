@@ -40,5 +40,7 @@ namespace CollectedCompany.Models.Application
         public String Country { get; set; }
 
         public String State { get; set; }
+
+        public String Email { get; set; }
     }
 }

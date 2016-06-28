@@ -1,5 +1,5 @@
 ﻿@model List<CollectedCompany.ServiceLayer.Integrations.Site.Models.Permissions>
-<table style="width: 100%;" id="StaffTable">
+<table style="width: 100%;" id="StaffTable" class="table table-bordered table-striped">
     <thead>
         <tr>
             <td>Name</td>
@@ -8,6 +8,8 @@
             <td>Website Design</td>
             <td>Sales</td>
             <td>Analytics</td>
+            <td>Place Orders</td>
+            <td>Manage Catalog</td>
             <td></td>
         </tr>
     </thead>
@@ -27,8 +29,8 @@
                     </td>
                 }
                 <td>
-                    <a class="bright edit-listing" data-id="@staffMember.User.Id"><span class="glyphicon glyphicon-edit"></span></a> |
-                    <a class="delete-listing bright" data-id="@staffMember.User.Id"><span class="glyphicon glyphicon-trash"></span></a>
+                    <a class="bright edit-listing" data-id="@staffMember.User.Id"><span class="fa fa-2x fa-edit"></span></a> |
+                    <a class="delete-listing bright" data-id="@staffMember.User.Id"><span class="fa fa-2x fa-trash-o"></span></a>
                 </td>
             </tr>
         }

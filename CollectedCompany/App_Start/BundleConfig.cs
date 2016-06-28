@@ -17,8 +17,7 @@ namespace CollectedCompany
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/tinymce").IncludeDirectory(
-                        "~/Scripts/plugins", ".js", true));
+            bundles.Add(new ScriptBundle("~/bundles/tinymce").IncludeDirectory("~/Scripts/plugins", ".js", true));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",

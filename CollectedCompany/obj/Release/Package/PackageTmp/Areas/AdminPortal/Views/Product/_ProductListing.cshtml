@@ -1,1 +1,54 @@
-﻿
+﻿@model List<CollectedCompany.Models.Shared.Product>
+
+
+<section id="ProductListing">
+
+    <div class="container-fluid">
+        <div class="row">
+            <h2>Your Products</h2>
+            <div class="col-lg-12">
+                <table id="ProductListingTable" class="table dataTable table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th style="width: 100px;">
+
+                            </th>
+                            <th>
+                                Title
+                            </th>
+                            <th>
+                                Description
+                            </th>
+                            <th>
+
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var product in Model)
+                        {
+                            <tr class="product-list" data-id="@product.Id">
+                                <td>
+                                    <div style="background-image: url('@product.ImageUrl')" class="product-preview">
+
+                                    </div>
+                                </td>
+                                <td>
+                                    @product.Title
+                                </td>
+                                <td>
+                                    @product.Description
+                                </td>
+                                <td>
+                                    <a class="fa fa-edit" data-id="@product.Id"></a>
+                                    <a class="fa fa-trash-o delete-product" data-id="@product.Id"></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-lg btn-primary" id="AddNewProduct" data-id="@Guid.Empty">Add</button>
+</section>

@@ -6,4 +6,7 @@
   <parameter name="SharedConnection-Web.config Connection String" description="SharedConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:tnft5cgze7.database.windows.net,1433;Database=Shared;User ID=tas9117@tnft5cgze7;Password=Sunnyd7149!@;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\Thomas\\documents\\visual\ studio\ 2013\\Projects\\CollectedCompany\\CollectedCompany\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='SharedConnection']/@connectionString" />
   </parameter>
+  <parameter name="StorageConnectionString-Web.config Connection String" description="StorageConnectionString Connection String used in web.config by the application to access the database." defaultValue="DefaultEndpointsProtocol=https;AccountName=musiccitysoftware;AccountKey=xohU8XHXYGj/bj1pW+mnp01lsGe0DP8bv2u/YmO0Z0iNvdyUMe0XiUAWkKNlENS+pkxq7goVw/JqgcIcevguow==" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Thomas\\documents\\visual\ studio\ 2013\\Projects\\CollectedCompany\\CollectedCompany\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='StorageConnectionString']/@connectionString" />
+  </parameter>
 </parameters>

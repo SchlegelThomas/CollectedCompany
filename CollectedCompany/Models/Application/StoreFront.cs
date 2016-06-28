@@ -19,6 +19,14 @@ namespace CollectedCompany.Models.Application
 
         public String Address { get; set; }
 
+        public String Address2 { get; set; }
+
+        public String State { get; set; }
+
+        public String City { get; set; }
+
+        public String Zip { get; set; }
+
         public String ContactPhone { get; set; }
 
         public String TimeZoneId { get; set; }

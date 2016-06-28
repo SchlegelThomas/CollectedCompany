@@ -22,6 +22,7 @@ namespace CollectedCompany.Models.Application
         public DbSet<TcgPlayerIntegration> TcgPlayerIntegrations { get; set; }
         public DbSet<TwitterIntegration> TwitterIntegrations { get; set; }
         public DbSet<StoreFront> StoreFronts { get; set; }
+        public DbSet<StoreAddress> StoreAddresses { get; set; }
         public DbSet<HtmlTemplate> HtmlTemplates { get; set; }
         public DbSet<HtmlColorVariable> HtmlColors { get; set; }
         public DbSet<HtmlFontSizeVariable> HtmlFonts { get; set; }

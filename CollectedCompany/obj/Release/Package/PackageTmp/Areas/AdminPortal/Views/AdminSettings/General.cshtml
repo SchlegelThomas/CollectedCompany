@@ -10,6 +10,9 @@
                 </div>
             </div>
             <div class="col-lg-12 card" id="FocusSection">
+                @Html.HiddenFor(x => x.StoreFront.StoreAddress.Id, new { Id = "StoreAddressId" })
+                @Html.HiddenFor(x => x.StoreFront.Id, new { Id = "StorefrontId" })
+                @Html.HiddenFor(x => x.Id, new { Id = "SettingsId" })
                 <div class="col-lg-8 center-div card">
                     <h1 class="text-center">Storefront</h1>
                     <h3 class="text-center">This is how we contact you, the business owner.</h3>
@@ -17,55 +20,54 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label" for="LegalBusinessName">Licensed Business Name</label>
-                                <input type="text" class="form-control" id="LegalBusinessName" placeholder="Something Inc, llc. 200X" />
+                                @Html.TextBoxFor(x => x.StoreFront.BusinessName, new { placeholder = "Something Inc, llc. 20xx", Id = "LegalBusinessName", @class = "form-control" })
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-10">
                             <div class="form-group">
-                                <label class="control-label" for="Address">Address</label>
-                                <input type="text" class="form-control" id="Address" placeholder="101 CoCo Way" />
+                                <label class="control-label" for="Address">Personal Address</label>
+                                @Html.TextBoxFor(x => x.StoreFront.Address, new { placeholder = "11 Dreary Lane", Id = "Address", @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="Address2">Apt, suite, etc.</label>
-                                <input type="text" class="form-control" id="Address2" placeholder="#4" />
+                                @Html.TextBoxFor(x => x.StoreFront.Address2, new { placeholder = "#4", Id = "Address2", @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="form-group">
                                 <label class="control-label" for="State1">State</label>
-                                <select type="text" class="form-control" id="State1"></select>
+                                @Html.DropDownListFor(x => x.StoreFront.State, new List<SelectListItem>(), new { placeholder = "VA", Id = "State1", @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="form-group">
                                 <label class="control-label" for="City1">City</label>
-                                <select type="text" class="form-control" id="City1"></select>
+                                @Html.DropDownListFor(x => x.StoreFront.City, new List<SelectListItem>(), new { placeholder = "VA", Id = "City1", @class = "form-control" })
                             </div>
                         </div>
 
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="Zip1">Zip</label>
-                                <input type="text" class="form-control" id="Zip1" placeholder="12345" />
+                                @Html.TextBoxFor(x => x.StoreFront.Zip, new { placeholder = "11598", Id = "Zip1", @class = "form-control" })
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="control-label" for="ContactEmail">Personal Email</label>
-                                <input type="text" class="form-control" id="ContactEmail" placeholder="owner@gmail.com" />
+                                @Html.TextBoxFor(x => x.StoreFront.ContactEmail, new { placeholder = "owner@gmail.com", Id = "ContactEmail", @class = "form-control", type = "email" })
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="control-label" for="ContactPhone">Contact Phone</label>
-                                <input type="text" class="form-control" id="ContactPhone" placeholder="(xxx)-xxx-xxxx" />
+                                @Html.TextBoxFor(x => x.StoreFront.ContactPhone, new { placeholder = "(xxx)-xxx-xxxx", Id = "ContactPhone", @class = "form-control", type = "tel" })
                             </div>
                         </div>
-                        <button class="btn btn-primary save-btn" id="SaveStoreFront">Save Me!</button>
                     </div>
                 </div>
                 <div class="col-lg-8 center-div card margin-top-20">
@@ -75,7 +77,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="control-label" for="BusinessName">Business Name</label>
-                                <input type="text" class="form-control" id="BusinessName" placeholder="Best. Store. Ever." />
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.LegalNameOfBusiness, new {placeholder = "Best. Store. Ever.", Id = "BusinessName", @class = "form-control", type = "text"})
                             </div>
                         </div>
                     </div>
@@ -83,13 +85,13 @@
                         <div class="col-lg-10">
                             <div class="form-group">
                                 <label class="control-label" for="Street">Street Address</label>
-                                <input type="text" class="form-control" id="Street" placeholder="Right down the road" />
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.Street, new {placeholder = "Right Down the road", Id = "Street", @class = "form-control", type = "text"})
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="Street2">Apt, suite, etc.</label>
-                                <input type="text" class="form-control" id="Street2" placeholder="#1" />
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.Street2, new {placeholder = "1", Id = "Street2", @class = "form-control", type = "text"})
                             </div>
                         </div>
                     </div>
@@ -97,38 +99,38 @@
                         <div class="col-lg-5">
                             <div class="form-group">
                                 <label class="control-label" for="State">State</label>
-                                <select type="text" class="form-control" id="State"></select>
+                                @Html.DropDownListFor(x => x.StoreFront.StoreAddress.State, new List<SelectListItem>(), new {placeholder = "VA", Id = "State", @class = "form-control"})
                             </div>
                         </div>
                         <div class="col-lg-5">
                             <div class="form-group">
                                 <label class="control-label" for="City">City</label>
-                                <select type="text" class="form-control" id="City"></select>
+                                @Html.DropDownListFor(x => x.StoreFront.StoreAddress.City, new List<SelectListItem>(), new {placeholder = "Palmyra", Id = "City", @class = "form-control"})
                             </div>
                         </div>
 
                         <div class="col-lg-2">
                             <div class="form-group">
                                 <label class="control-label" for="Zip">Zip</label>
-                                <input type="text" class="form-control" id="Zip" />
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.Zip, new {placeholder = "11598", Id = "Zip", @class = "form-control"})
                             </div>
                         </div>
 
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="control-label" for="Phone">Phone</label>
-                                <input type="text" class="form-control" id="Phone" placeholder="(xxx)-xxx-xxxx" />
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.PhoneNumber, new {placeholder = "(xxx)-xxx-xxxx", Id = "Phone", @class = "form-control", type = "tel"})
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="control-label" for="CustomerEmail">Email for Customers</label>
-                                <input type="text" class="form-control" id="CustomerEmail" placeholder="email@support.com"/>
+                                @Html.TextBoxFor(x => x.StoreFront.StoreAddress.Email, new {placeholder = "email@support.com", Id = "CustomerEmail", @class = "form-control", type = "email"})
                             </div>
                         </div>
-                        <button class="btn btn-primary save-btn" id="SaveStoreAddress">Save Me!</button>
                     </div>
                 </div>
+                <button class="btn btn-primary save-btn" id="SaveStoreFront">Save Changes</button>
             </div>
         </div>
     </div>

@@ -1,10 +1,57 @@
-﻿<section id="ProductDetails">
-    <div class="col-lg-10 center-div">
-        <div class="col-lg-6">
-            
+﻿@model CollectedCompany.Models.Shared.Product
+
+
+@Html.HiddenFor(x => x.Id, new { Id = "ProductId" })
+<a id="BackToProducts">< Back to List</a>
+<section id="ProductDetails">
+
+    <div class="col-lg-10 center-div new-product card">
+        <h2>Product Details</h2>
+        <div class="row">
+            <div class="col-lg-12" style="background-image: url('@Model.ImageUrl');" id="ProductImagePreview">
+
+            </div>
         </div>
-        <div class="col-lg-6">
-            
+        <div class="row">
+            <div class="col-lg-10 center-div">
+                @foreach (var image in Model.Images)
+                {
+                    <div class="col-lg-3">
+                        <div class="gallery-thumbnail" style="background-image: url('@image.ImageUrl');">
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <input id="Title" type="text" class="form-control" placeholder="Title" value="@Model.Title" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <textarea id="Description" class="form-control" resize="none" maxlength="500">@Model.Description</textarea>
+            </div>
+        </div>
+        <div class="row" id="ImageUpload">
+            <div class="col-lg-6">
+                <h4 class="align-center">Your Main Product Image</h4>
+                <div id="MainImageDropDown" class="col-lg-12 dropzone">
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h4 class="align-center">Image Gallery</h4>
+                <div id="ImageDropZone" class="col-lg-12 dropzone">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button class="btn btn-lg save-btn btn-primary" id="SaveProduct">Save</button>
+            </div>
         </div>
     </div>
 </section>

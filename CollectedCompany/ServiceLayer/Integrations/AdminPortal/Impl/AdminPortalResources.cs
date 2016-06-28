@@ -1,6 +1,7 @@
 ﻿using CollectedCompany.Models.Application;
 using CollectedCompany.Models.Shared;
 using CollectedCompany.ServiceLayer.Integrations.AdminPortal.Bindings;
+using CollectedCompany.ServiceLayer.Integrations.AzureStorage.Bindings;
 using CollectedCompany.ServiceLayer.Integrations.CityState.Bindings;
 using CollectedCompany.ServiceLayer.Integrations.Site.Bindings;
 
@@ -12,13 +13,15 @@ namespace CollectedCompany.ServiceLayer.Integrations.AdminPortal.Impl
         private readonly ApplicationDbContext _appDbContext;
         private readonly ICityStateApiService _cityStateApiService;
         private readonly IUserManagement _userManagement;
+        private readonly IAzureStorageService _imageStorageService;
 
-        public AdminPortalResources(SharedDbContext sharedDbContext, ApplicationDbContext appDbContext, ICityStateApiService cityStateApiService, IUserManagement userManagement)
+        public AdminPortalResources(SharedDbContext sharedDbContext, ApplicationDbContext appDbContext, ICityStateApiService cityStateApiService, IUserManagement userManagement, IAzureStorageService imageStorageService)
         {
             _sharedDbContext = sharedDbContext;
             _appDbContext = appDbContext;
             _cityStateApiService = cityStateApiService;
             _userManagement = userManagement;
+            _imageStorageService = imageStorageService;
         }
 
 
@@ -41,6 +44,12 @@ namespace CollectedCompany.ServiceLayer.Integrations.AdminPortal.Impl
         public IUserManagement UserManagementService
         {
             get { return _userManagement; }
+        }
+
+
+        public IAzureStorageService ImageStorageService
+        {
+            get { return _imageStorageService; }
         }
     }
 }

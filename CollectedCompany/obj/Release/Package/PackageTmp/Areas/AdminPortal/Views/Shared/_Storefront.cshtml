@@ -1,0 +1,29 @@
+﻿@using WebGrease.Css.Extensions
+@model CollectedCompany.Models.Application.StoreFront
+
+@{
+    var abbreviation = String.Empty;
+    var split = @Model.BusinessName.Split(' ');
+}
+@{
+    if (split.Length > 3)
+    {
+        split.Take(3).ForEach(word => abbreviation = abbreviation + word[0]);
+    }
+    else
+    {
+        split.ForEach(word => abbreviation = abbreviation + word[0]);
+    }
+}
+
+
+<div id="StoreFront">
+    <button class="store-btn">
+        <span class="storefront-initials">@abbreviation</span>
+        <span class="storefront-name">
+            @Model.BusinessName
+            <span class="storefront-user">Thomas Schlegel</span>
+        </span>
+        <span class="fa fa-caret-up"></span>
+    </button>
+</div>

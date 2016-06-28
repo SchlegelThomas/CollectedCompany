@@ -15,6 +15,8 @@ namespace CollectedCompany.Models.Shared
 
         public String TemplateUrl { get; set; }
 
+        public String ImageUrl { get; set; }
+
         public virtual ICollection<HtmlColorVariable> Colors { get; set; }
 
         public virtual ICollection<HtmlFontSizeVariable> Fonts { get; set; }

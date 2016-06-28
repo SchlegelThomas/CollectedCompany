@@ -139,3 +139,7 @@ C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\Collected
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.xml
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\bin\System.Web.Http.WebHost.xml
 C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Application.Settings1.resources
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Application.SettingsUpdate.resources
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Shared.SettingsUpdate.resources
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Application.ImageUrlToTemplates.resources
+C:\Users\Thomas\documents\visual studio 2013\Projects\CollectedCompany\CollectedCompany\obj\Release\CollectedCompany.Migrations.Shared.ImageUrlToTemplates.resources

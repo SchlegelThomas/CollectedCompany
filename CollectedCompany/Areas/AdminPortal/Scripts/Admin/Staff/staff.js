@@ -46,6 +46,7 @@
                         contentType: 'application/json',
                         success: function (response) {
                             if (response.Success) {
+                                toastr.success('Add Successful', 'General Settings');
                                 loadStaff();
                             } else {
 
@@ -83,6 +84,7 @@
                                 contentType: 'application/json',
                                 success: function (response) {
                                     if (response.Success) {
+                                        toastr.success('Save Successful', 'General Settings');
                                         loadStaff();
                                     } else {
                                         $.showAlertModal(response.Errors, $.noop);
@@ -103,6 +105,7 @@
             $.showConfirmModal('Are you sure you want to delete your staff member?', function (ok) {
                 if (ok) {
                     $.makeAjaxPost('/AdminPortal/Staff/DeleteStaff?userId=' + id, null).then(function () {
+                        toastr.success('Delete Successful', 'Staff Update');
                         loadStaff();
                     });
                 }
@@ -116,8 +119,8 @@
             var id = $(self).attr('data-id');
             var active = $(self).hasClass('check');
 
-            $.makeAjaxPost('/AdminPortal/Staff/UpdateRole?role=' + encodeURIComponent(role) + '&id=' + encodeURIComponent(id) + '&active=' + encodeURIComponent(active), null).then(function() {
-
+            $.makeAjaxPost('/AdminPortal/Staff/UpdateRole?role=' + encodeURIComponent(role) + '&id=' + encodeURIComponent(id) + '&active=' + encodeURIComponent(active), null).then(function(response) {
+                toastr.success('Save Successful', 'Staff Role');
             });
         });
 
